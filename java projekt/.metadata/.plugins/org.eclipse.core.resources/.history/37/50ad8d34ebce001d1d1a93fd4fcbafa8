@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejestracja do Bibioteki</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="login.js"></script>
+	
+    
+
+    <link rel="stylesheet" href="H_rejestracja.css" />
+    
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+  </head>
+  <body>
+  	<input type="hidden" id="status" value="<%= request.getAttribute("status") %>" >
+  
+ 
+  
+  
+    <div class="login_form_container">
+      <div class="login_form">
+        <h4>Rejestracja</h4>
+        <div class="input_group">
+        
+        <form method= "post" action="register">
+		<br/> <input placeholder="Imie:" type="text" name="Aimie" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="Nazwisko:" type="text" name="Anazwisko" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="E-mail:" type="text" name="Aemail" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="Twoje haslo:" type="password" name="Ahaslo1"class="input_text" autocomplete="off"/><br/>
+		
+       </div> 
+       
+        <div class="button_group" id="login_button">
+         <button> <a> Zarejestruj sie</a></button>
+        </div>
+        
+        </form>
+        <div class="fotter">
+       
+          Masz juz konto to:<a href="G_login.jsp">Zaloguj sie</a>
+        </div>
+        
+     </div>
+     </div>
+     
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript">
+	
+		var staus = document.getElementById("status").value;
+		if(status == "success")
+		{
+			swal("Gratulacje","Udało się zarejestrować","sukces");	
+			
+		}
+	
+	</script>
+	
+ 
+	
+	
+  </body>
+</html>

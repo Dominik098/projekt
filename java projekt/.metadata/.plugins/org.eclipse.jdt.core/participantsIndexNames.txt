@@ -1,0 +1,3 @@
+INDEX VERSION 1.132
+C:\java projekt\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\200577678.index
+\biblioteka\src\main\java

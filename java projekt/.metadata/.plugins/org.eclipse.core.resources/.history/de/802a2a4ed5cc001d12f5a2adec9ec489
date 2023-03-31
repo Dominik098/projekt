@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejestracja do Bibioteki</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="login.js"></script>
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="H_rejestracja.css" />
+  </head>
+  <body>
+    <div class="login_form_container">
+      <div class="login_form">
+        <h4>Rejestracja</h4>
+        <div class="input_group">
+        
+        <form method= "post" action="register">
+		<br/> <input placeholder="Imie:" type="text" name="Aimie" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="Nazwisko:" type="text" name="Anazwisko" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="E-mail:" type="text" name="Aemail" class="input_text" autocomplete="off"/><br/>
+		<br/> <input placeholder="Twoje haslo:" type="password" name="Ahaslo1"class="input_text" autocomplete="off"/><br/>
+		
+       </div> 
+       
+        <div class="button_group" id="login_button">
+          <button>Zarejestruj sie</button>
+          
+        </div>
+        
+        </form>
+        <div class="fotter">
+       
+          Masz juz konto to:<a href="G_login.jsp">Zaloguj sie</a>
+        </div>
+        <div id="pow"style="padding-top: 8px;">Chcesz wrocic na strone glowna kliknij: <a href="A_strona-gl.jsp">Powrot</a></div>
+     </div>
+     </div>
+  </body>
+</html>
