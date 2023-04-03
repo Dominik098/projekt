@@ -1,0 +1,15 @@
+package com.uniquedevelopr.registration;
+
+public class książki {
+
+	public void add(książki książki) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void add(książki książki1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

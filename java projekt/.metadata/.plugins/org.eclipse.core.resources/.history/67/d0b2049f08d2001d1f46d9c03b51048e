@@ -1,0 +1,41 @@
+package com.uniquedevelopr.registration;
+import javax.swing.JOptionPane;
+import java.sql.*;
+
+public class LoginPanel {
+	
+
+	
+
+	public class Main {
+	   public static void main(String[] args) {
+	      String url = "jdbc:mysql://localhost:3306/logowanie";
+	      String user = "root";
+	      String password = "P@ssw0rd";
+	      String wpisanyLogin = "przykladowy_login";
+	      String wpisaneHaslo = "przykladowe_haslo";
+	      
+	      try {
+	         Connection conn = DriverManager.getConnection(url, user, password);
+	         String query = "SELECT * FROM tabela_uzytkownikow WHERE login=? AND haslo=?";
+	         PreparedStatement stmt = conn.prepareStatement(query);
+	         stmt.setString(1, wpisanyLogin);
+	         stmt.setString(2, wpisaneHaslo);
+	         ResultSet rs = stmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            System.out.println("Zalogowano pomyślnie!");
+	         } else {
+	            System.out.println("Niepoprawny login lub hasło!");
+	         }
+	         
+	         rs.close();
+	         stmt.close();
+	         conn.close();
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }
+	   }
+	}
+
+}

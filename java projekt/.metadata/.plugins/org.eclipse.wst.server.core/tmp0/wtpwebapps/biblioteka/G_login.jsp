@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -17,18 +18,22 @@
 </head>
 
 <body>
+
+
+
+
   <div class="login_form_container">
     <div class="login_form">
       <h2>Logowanie</h2>
       
-   <form method= "post" action="login">
+   <form method= "post" action="login" >
       <div class="input_group">
         <i class="fa fa-user"></i>
         <input type="email" placeholder="E-mail" required name="email-login" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="input_text" autocomplete="off" required />
       </div>
       <div class="input_group">
         <i class="fa fa-unlock-alt"></i>
-        <input type="password" placeholder="Haslo" required name="haslo-login" class="input_text" autocomplete="off" required />
+        <input type="password" placeholder="Hasło" required name="haslo-login" class="input_text" autocomplete="off" required />
       </div>
       <div class="button_group" id="login_button">
         <button><a>Zaloguj się</a></button>
@@ -36,7 +41,7 @@
       
   </form>
       <div class="fotter">
-        <a>Zapomiales hasla?</a>
+        <a>Jeśli nie masz konta to:</a>
         <a href="H_rejestracja.jsp">Zarejsestruj sie</a>
       </div>
   </div>
