@@ -20,6 +20,7 @@
 <body>
 
 
+  	<input type="hidden" id="status" value="<%= request.getAttribute("status") %>" >
 
 
   <div class="login_form_container">
@@ -47,6 +48,19 @@
   </div>
 
 </div>
+
+
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript">
+	
+		var status = document.getElementById("status").value;
+		if(status == "failed")
+		{
+			swal("Błąd","Nie udało się zalogować","error");	
+			document.getElementById("status").value="";
+		}
+	
+	</script>
 </body>
 
 </html>

@@ -27,6 +27,8 @@
         <h4>Rejestracja</h4>
         <div class="input_group">
         
+       
+        
         <form method= "post" action="register" accept-charset="UTF-8">
 		<br> <input placeholder="Imię:" type="text" name="Aimie" required class="input_text"  autocomplete="off"><br>
 		<br> <input placeholder="Nazwisko:" type="text" name="Anazwisko" required class="input_text" autocomplete="off"><br>
@@ -48,13 +50,17 @@
      </div>
      </div>
      
+   
+     
+     
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript">
 	
 		var staus = document.getElementById("status").value;
 		if(status == "success")
 		{
-			swal("Gratulacje","Udało się zarejestrować","sukces");	
+			swal("Gratulacje","Udało się zarejestrować","success");	
+			document.getElementById("status").value="";
 			
 		}
 	

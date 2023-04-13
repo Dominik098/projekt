@@ -30,15 +30,22 @@
                <!-- <li><a href="G_login.jsp">Logowanie</a></li>
                 <li><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 <li><a href= "logout">Wyloguj się</a></li>
-                <li><a > <%=session.getAttribute("email-login") %> </a></li>
-            </ul>
+                <li><a > <%=session.getAttribute("email-login") %> </a>
+                
+                <!-- tu dodać listę rozwijalną dla nazwy wypożyczonych książek prze osobę 
+                
+                
+                 -->
+                
+                </li>
+
 
         </nav>
 
     </header>
 
 <h1 id="cytat">„Czytanie dobrych książek jest niczym rozmowa z najwspanialszymi ludźmi minionych czasów.” – Kartezjusz</h1>
-<h1>Wszytakie książki (które można wypożyczyć) </h1>
+<h1>Wszytakie książki wypożyczne przez naszych użytkowników </h1>
 
 
 
