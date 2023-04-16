@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+
+<%@ page import="java.sql.*" %>
+
+
  <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +15,9 @@
 
     <link rel="icon" type="image/png" href="3.png" sizes="96x96" />
     <title>Kategorie książek </title>
+
+    
+    
 </head>
 
 <body>
@@ -37,27 +45,60 @@
         </nav>
 
     </header>
-    <h1>Księżki dostępne w naszej bibliotece</h1>
-    <h3>Oto lista książek</h3>
-    <span>
-    <ol id="baza-danych">
-        <li>
-     
-        
-       
-        
-        
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
-</span>
+    <h1>Księżki </h1>
+    
+    <h3>Oto lista wszystkich książek dostępnych do wypożyczenia w bibliotece </h3>
+    
+    
+    <table>
+        <tr>
+       		 <th>Lp.</th>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Wydawnictwo</th>
+            <th>Data_publikacj</th>
+        </tr>
+        <% 
+            try {
+                // Połączenie z bazą danych
+                String url = "jdbc:mysql://localhost:3306/Biblioteka";
+                String user = "root";
+                String password = "P@ssw0rd";
+                Connection conn = DriverManager.getConnection(url, user, password);
 
+                // Zapytanie SQL
+                String sql = "SELECT * FROM Książki";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+
+                // Wyświetlenie wyników zapytania
+                int i=0;
+                while (rs.next()) { i++;
+                    String tytuł = rs.getString("tytuł");
+                    String autor = rs.getString("autor");
+                    String wydawnictwo = rs.getString("wydawnictwo");
+                    String data_publikacji = rs.getString("data_publikacji");
+        %>
+            <tr>
+            	<td><%= i %></td>
+                <td><%= tytuł %></td>
+                <td><%= autor %></td>
+                <td><%= wydawnictwo %></td>
+                <td><%= data_publikacji %></td>
+            </tr>
+        <% 
+                }
+                // Zamykanie połączenia z bazą danych
+                rs.close();
+                ps.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        %>
+    </table>
+  
+    
 
     <footer>
         <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>

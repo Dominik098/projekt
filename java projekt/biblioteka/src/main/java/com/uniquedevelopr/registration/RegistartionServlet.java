@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 /**
  * Servlet implementation class RegistationServlet
  */
@@ -36,6 +38,19 @@ public class RegistartionServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie","root","P@ssw0rd");
+			
+			// Sprawdź, czy email już istnieje w bazie danych
+            PreparedStatement checkEmailStmt = con.prepareStatement("SELECT email FROM users WHERE email=?");
+            checkEmailStmt.setString(1, email);
+            if (checkEmailStmt.executeQuery().next()) {
+                // Jeśli email już istnieje, zwróć komunikat o błędzie
+                dispatcher = request.getRequestDispatcher("H_rejestracja.jsp");
+                request.setAttribute("status_rej", "failed_rej");
+                dispatcher.forward(request, response);
+                return;
+            }
+			
+			
 			PreparedStatement pst = con.prepareStatement("insert into users (imie,nazwisko,email,haslo) values(?,?,?,?)");
 			pst.setString(1, imie);
 			pst.setString(2, nazwisko);
@@ -45,12 +60,12 @@ public class RegistartionServlet extends HttpServlet {
 			int rowCount = pst.executeUpdate();
 			dispatcher = request.getRequestDispatcher("G_login.jsp");
 			if(rowCount > 0) {
-				request.setAttribute("status", "success");
+				request.setAttribute("status_rej", "success_rej");
 				
 				
 			}
 			else {
-				request.setAttribute("status", "failed");
+				request.setAttribute("status_rej", "failed_rej");
 			}
 			dispatcher.forward(request, response);
 			

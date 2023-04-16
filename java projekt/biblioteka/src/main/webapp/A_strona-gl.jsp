@@ -19,12 +19,7 @@
     <link rel="stylesheet" href="A_styl.css" type="text/css">
     <link rel="icon" type="image/png" href="3.png" sizes="96x96" >
     
-    
-  
-    
-    
-    
-    
+ 
     
 </head>
 

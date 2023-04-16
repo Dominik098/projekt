@@ -56,7 +56,7 @@
 		var status = document.getElementById("status").value;
 		if(status == "failed")
 		{
-			swal("Błąd","Nie udało się zalogować","error");	
+			swal("Błąd","Nie udało się zalogować, nie poprawny e-mail lub hasło","error");	
 			document.getElementById("status").value="";
 		}
 	

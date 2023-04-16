@@ -1,0 +1,42 @@
+package com.uniquedevelopr.registration;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+/**
+ * Servlet implementation class hashPassword
+ */
+@WebServlet("/hashPassword")
+public class hashPassword extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+
+		public hashPassword(String password) {
+		    try {
+		        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+		        byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+		        StringBuilder hexString = new StringBuilder();
+		        for (byte b : encodedHash) {
+		            String hex = Integer.toHexString(0xff & b);
+		            if (hex.length() == 1) hexString.append('0');
+		            hexString.append(hex);
+		        }
+		        return;
+		    } catch (NoSuchAlgorithmException e) {
+		        throw new RuntimeException(e);
+		    }
+		
+
+		
+	}
+
+}

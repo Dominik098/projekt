@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="alert/dist/sweetalert.css">
   </head>
   <body>
-  	<input type="hidden" id="status" value="<%= request.getAttribute("status") %>" >
+  
+  
+  	<input type="hidden" id="status_rej" value="<%= request.getAttribute("status_rej") %>" >
   
  
   
@@ -56,12 +58,11 @@
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript">
 	
-		var staus = document.getElementById("status").value;
-		if(status == "success")
+		var status = document.getElementById("status_rej").value;
+		if(status == "failed_rej")
 		{
-			swal("Gratulacje","Udało się zarejestrować","success");	
-			document.getElementById("status").value="";
-			
+			swal("Błąd","Nie udało się zarejestrować taki użytkownik już istnieje","error");	
+			document.getElementById("status_rej").value="";
 		}
 	
 	</script>
