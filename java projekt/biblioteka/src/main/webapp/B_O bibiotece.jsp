@@ -116,7 +116,7 @@ Konkurs literacki dla dzieci i młodzieży z okazji Międzynarodowego Dnia Ksią
   edukacyjnych, artystycznych i kulturalnych.</p>
         <footer>
             <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
-            <p>Adres: ul. Biblioteczna 1, 00-217 Warszawa Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+            <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
     
         </footer>
 </body>

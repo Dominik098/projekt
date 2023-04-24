@@ -184,7 +184,10 @@
 			<img src="https://files.legimi.com/images/e2fcee1ef2ef6dd22abc5eb50f441961/w200_u90.jpg" alt="książka" >
 			
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				Krótkie opowiadanie z podgatunku fantastyki soft vore, powstałe na podstawie zagranicznego komiksu i fan fiction. 
+				Alternatywna historia wydarzeń na niebezpiecznej planecie Aj z powieści "Onkalot", 
+				gdzie Forkis i Anna rozbili się podczas bitwy kosmicznej.
+				 Jak sam współautor wskazuje we wstępie, tekst należy traktować z przymrużeniem oka i jako parodię.
 			</div>
 			
 			</div>
@@ -196,7 +199,9 @@
 			<img src="https://files.legimi.com/images/2fde278bc3238eb9ca41b6baf1be6094/w200_u90.jpg" alt="książka" >
 			
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				Motywem przewodnim jest duchowość, podróże astralne i reinkarnacja. Historia poruszająca te kwestie mówi
+				 o wyzwaniach związanych z rozpoczynaniem dorosłego życia, trudnej miłości,
+				 radzeniu sobie ze stratą bliskich, a także o skomplikowanym odnajdywaniu własnej drogi duchowej.
 			</div>
 			 
 			</div>
@@ -206,7 +211,9 @@
 			<img src="https://files.legimi.com/images/cbc4e702240d4c0869c5a0a73c7fd7ec/w200_u90.jpg" alt="książka" >
 			
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				Na co dzień spotykamy się z sytuacjami, które nie do końca potrafimy pojąć rozumem. Nazywamy je tajemnicami.
+				 Często skrywamy je tylko dla siebie i po pewnym czasie tracimy rozróżnienie, 
+				czy przydarzyły się nam naprawdę, czy też tylko się nam przyśniły.
 			</div>
 			  
 			</div>
@@ -214,11 +221,15 @@
                
                
             <div class="image-container"  >
-                <h4>Mieszkanie przy ulicy Ryden i inne opowiadania</h4>
-			<img src="https://files.legimi.com/images/9d234106e9877f2136161e18dd2ad2c5/w200_u90.jpg"  alt="książka" >
+                <h4>Bez planu B </h4>
+			<img src="https://ecsmedia.pl/c/bez-planu-b-w-iext127599961.jpg"  alt="książka" >
 			
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+			Podczas swojej wędrówki przypadkiem dowiaduje się, że w Gerrardsville w Kolorado można obejrzeć wystawę 
+			uzbrojenia z okresu wojny secesyjnej.
+			 A że znajduje się niedaleko, postanawia odwiedzić miasteczko. I jak to zwykle u niego bywa, już pierwszego 
+			 dnia dzieje się coś, co sprawia, że szybko tego miejsca nie opuści.
+				
 			</div>
 			  
 			</div>
@@ -228,17 +239,23 @@
 			<img src="https://files.legimi.com/images/7bcdfb0db2110b25c569f78d91af3a31/w200_u90.jpg" alt="książka" >
 			
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				Najważniejsza w tym wszystkim jest Katrusia. To jej pogodne serce sprawiło, że powstała cała ta historia.
+				 Potem doszły jeszcze pozostałe materiały edukacyjne, które pozwalają pełniej zrozumieć jej losy.
+				  Bohaterką opowieści jest dziewczynka, która musiała opuścić swój rodzinny dom i udać się w
+				   daleką i niebezpieczną podróż w poszukiwaniu swojego nowego miejsca na ziemi.
 			</div>
 			  
 			</div>
                 
                
            <div class="image-container"  >
-            <h4>Gabriel Caballero</h4>
-			<img src="https://files.legimi.com/images/4bcabc6b74b59ac663a2e0e7da240c32/w200_u90.jpg" alt="książka" >
+            <h4>Kult</h4>
+			<img src="https://ecsmedia.pl/c/kult-w-iext126948815.jpg" alt="książka" >
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				Fabuła „Kultu” opowiada o porwaniu pięcioletniego Ossiana w sztokholmskiej dzielnicy Sodermalm.
+				Lackberg i Fexeus udowadniają ponownie, że są fantastycznym duetem. 
+				Oparta na wiedzy i doświadczeniu mentalisty oraz umiejętnościach pisarki opowieść zachwyca złożonością oraz
+				 niesamowitym, zapierającym dech w piersiach klimatem.
 			</div>
 			 
 			</div>
@@ -247,7 +264,10 @@
                     <h4>Mediare. Mediacje rówjeśnicze</h4>
 			<img src="https://files.legimi.com/images/88eebf78f981b6d28573f5ffcbc6d34c/w200_u90.jpg"  alt="książka" >
 			<div class="image-description">
-				Tutaj jest opis obrazka 1
+				"Mediare. Mediacje rówieśnicze" to książka autorstwa Adama Szeli, która opisuje metodę rozwiązywania 
+				konfliktów między rówieśnikami za pomocą mediacji. Mediacje rówieśnicze polegają na tym, że równorzędni 
+				uczniowie pomagają innym uczniom w rozwiązaniu problemów i konfliktów między nimi, 
+				zamiast polegać wyłącznie na interwencji dorosłych.
 			</div>
 			
 			</div>
@@ -276,39 +296,11 @@
  
      
 
-    <div>
-        <h2>Godziny otwarcia biblioteki</h2>
-        <center>
-            <table id="Godziny">
-                <tr id="dni">
-                    <td>Poniedziałek</td>
-                    <td>Wtorek</td>
-                    <td>Środa</td>
-                    <td>Czwartek</td>
-                    <td>Piątek</td>
-                    <td>Sobota</td>
-                    <td>Nsiedziela</td>
-                </tr>
-                <tr id="dni_godz">
-                    <td>8:00 - 20:00</td>
-                    <td>8:00 - 20:00</td>
-                    <td>8:00 - 20:00</td>
-                    <td>10:00 - 20:30</td>
-                    <td>8:00 - 20:00</td>
-                    <td>8:00 - 19:00</td>
-                    <td style="color:red">Nieczynne</td>
-                </tr>
-
-            </table>
-        </center>
-
-
-
-    </div>
+ 
 
     <footer>
         <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeeżone.</p>
-        <p>Adres: ul. Biblioteczna 1, 00-217 Warszawa Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+        <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
 
     </footer>
 

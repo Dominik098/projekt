@@ -21,6 +21,8 @@
 
 
   	<input type="hidden" id="status" value="<%= request.getAttribute("status") %>" >
+  	
+  	<input type="hidden" id="status_rej" value="<%= request.getAttribute("status_rej") %>" >
 
 
   <div class="login_form_container">
@@ -59,6 +61,14 @@
 			swal("Błąd","Nie udało się zalogować, nie poprawny e-mail lub hasło","error");	
 			document.getElementById("status").value="";
 		}
+		
+		var status_success_rej = document.getElementById("status_rej").value;
+        if(status_success_rej == "success_rej")
+        {
+            swal("Tak jest!!!","Udało się zarejestrować. Teraz możesz się zalogować.","success");
+            document.getElementById("status_rej").value="";
+
+        }
 	
 	</script>
 </body>

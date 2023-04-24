@@ -88,3 +88,27 @@ table {
     tr:hover {
   border-bottom: 2px solid red;
 }
+
+
+.pobierz{
+	 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pobierz:hover {
+  background-color: #0056b3;
+}
+
+

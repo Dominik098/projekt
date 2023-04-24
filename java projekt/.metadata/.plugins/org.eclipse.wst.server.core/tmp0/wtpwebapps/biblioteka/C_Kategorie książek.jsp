@@ -49,60 +49,77 @@
     
     <h3>Oto lista wszystkich książek dostępnych do wypożyczenia w bibliotece </h3>
     
-    
-    <table>
+<table>
+    <tr>
+        <th>Lp.</th>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Wydawnictwo</th>
+        <th>Data_publikacj</th>
+        <th>Książki w formacie PDF</th>
+       
+     
+    </tr>
+    <% 
+        try {
+            // Połączenie z bazą danych
+            String url = "jdbc:mysql://localhost:3306/Biblioteka";
+            String user = "root";
+            String password = "P@ssw0rd";
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            // Zapytanie SQL
+            String sql = "SELECT * FROM Książki";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            // Wyświetlenie wyników zapytania
+            int i=0;
+            while (rs.next()) { i++;
+                String tytuł = rs.getString("tytuł");
+                String autor = rs.getString("autor");
+                String wydawnictwo = rs.getString("wydawnictwo");
+                String data_publikacji = rs.getString("data_publikacji");
+                String pdf_link = rs.getString("pdf");
+              
+                
+                
+    %>
         <tr>
-       		 <th>Lp.</th>
-            <th>Tytuł</th>
-            <th>Autor</th>
-            <th>Wydawnictwo</th>
-            <th>Data_publikacj</th>
+            <td><%= i %></td>
+            <td><%= tytuł %></td>
+            <td><%= autor %></td>
+            <td><%= wydawnictwo %></td>
+            <td><%= data_publikacji %></td>
+            <td>
+    <a href="<%= request.getContextPath() + pdf_link %>" target="_blank" download><button class="pobierz">Pobierz książkę </button></a>
+</td>
+        
+
         </tr>
-        <% 
-            try {
-                // Połączenie z bazą danych
-                String url = "jdbc:mysql://localhost:3306/Biblioteka";
-                String user = "root";
-                String password = "P@ssw0rd";
-                Connection conn = DriverManager.getConnection(url, user, password);
-
-                // Zapytanie SQL
-                String sql = "SELECT * FROM Książki";
-                PreparedStatement ps = conn.prepareStatement(sql);
-                ResultSet rs = ps.executeQuery();
-
-                // Wyświetlenie wyników zapytania
-                int i=0;
-                while (rs.next()) { i++;
-                    String tytuł = rs.getString("tytuł");
-                    String autor = rs.getString("autor");
-                    String wydawnictwo = rs.getString("wydawnictwo");
-                    String data_publikacji = rs.getString("data_publikacji");
-        %>
-            <tr>
-            	<td><%= i %></td>
-                <td><%= tytuł %></td>
-                <td><%= autor %></td>
-                <td><%= wydawnictwo %></td>
-                <td><%= data_publikacji %></td>
-            </tr>
-        <% 
-                }
-                // Zamykanie połączenia z bazą danych
-                rs.close();
-                ps.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+    <% 
             }
-        %>
-    </table>
-  
+            // Zamykanie połączenia z bazą danych
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    %>
+</table>
+
+<script>
+    // Funkcja pobierająca plik PDF
+    function pobierzPDF(link) {
+        window.location.href = link;
+    }
+</script>
     
 
     <footer>
         <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
-        <p>Adres: ul. Biblioteczna 1, 00-217 Warszawa Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+        <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
 
     </footer>
 

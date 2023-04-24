@@ -48,6 +48,24 @@
 <h1>Wszytakie książki wypożyczne przez naszych użytkowników </h1>
 
 
+<p>info: <button onclick="location.href='‪C:\Users\User\Desktop\lalka.pdf'">lalka</button></p>
+<a href="‪C:\Users\User\Desktop\lalka.pdf" download>lalka</a>
+<a href="‪‪https://wolnelektury.pl/media/book/pdf/pan-tadeusz.pdf" download>pan tadeusz</a>
+<a href="‪C:\Users\User\Desktop\w-pustyni-i-w-puszczy (1).pdf" download>pustynia</a>
+
+<br>
+
+<a href="pdf/zbrodnia i kara.pdf" download>link pobierz</a>
+
+
+
+
+
+
+
+
+
+
 
 <ul>
     <li>x</li>
@@ -58,7 +76,7 @@
 
 <footer>
     <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
-    <p>Adres: ul. Biblioteczna 1, 00-217 Warszawa Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+    <p> Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
 
 </footer>
 

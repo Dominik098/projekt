@@ -71,7 +71,7 @@
     </div>
     <div class="footer">
         <span>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</span><br>
-        <span>Adres: ul. Biblioteczna 1, 00-000 Miasto. Telefon: +48 123 456 789. E-mail: infobiblio@interia.pl</span>
+        <span>Telefon: +48 123 456 789. E-mail: infobiblio@interia.pl</span>
 
     </div>
 

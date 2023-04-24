@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
+
 /**
  * Servlet implementation class RegistationServlet
  */
@@ -34,6 +36,9 @@ public class RegistartionServlet extends HttpServlet {
 		String haslo = request.getParameter("Ahaslo1");
 		RequestDispatcher dispatcher = null;
 		Connection con = null;
+		
+		
+
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

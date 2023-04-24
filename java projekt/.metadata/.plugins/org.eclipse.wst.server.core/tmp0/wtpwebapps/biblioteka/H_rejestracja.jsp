@@ -19,9 +19,9 @@
   <body>
   
   
-  	<input type="hidden" id="status_rej" value="<%= request.getAttribute("status_rej") %>" >
+  			<input type="hidden" id="status_rej" value="<%= request.getAttribute("status_rej") %>" >
   
- 
+
   
   
     <div class="login_form_container">
@@ -52,23 +52,24 @@
      </div>
      </div>
      
-   
-     
      
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     
 	<script type="text/javascript">
+	
 	
 		var status = document.getElementById("status_rej").value;
 		if(status == "failed_rej")
 		{
-			swal("Błąd","Nie udało się zarejestrować taki użytkownik już istnieje","error");	
+			swal("Błąd", "Nie udało się zarejestrować, użytkownik o takim e-mailu istnieje", "error");	
 			document.getElementById("status_rej").value="";
 		}
-	
+		
+		
+		
+		
 	</script>
 	
  
-	
-	
   </body>
 </html>

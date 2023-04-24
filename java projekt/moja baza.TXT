@@ -1,0 +1,66 @@
+CREATE DATABASE Biblioteka;
+USE Biblioteka;
+
+CREATE TABLE Książki (
+  numer_ID INT(11) PRIMARY KEY NOT NULL,
+  tytuł VARCHAR(255) NOT NULL,
+  autor TEXT NOT NULL,
+  wydawnictwo TEXT NOT NULL,
+  data_publikacji DATE NOT NULL,
+  pdf varchar(255) not null
+);
+
+INSERT INTO Książki (numer_ID, tytuł, autor, wydawnictwo, data_publikacji,pdf) VALUES
+  (1, 'Pan Tadeusz', 'Adam Mickiewicz', 'Czytelnik', '1834-06-28','/pdf/pan-tadeusz.pdf'),
+  (2, 'Lalka', 'Bolesław Prus', 'Wydawnictwo Literackie', '1890-02-25','/pdf/lalka.pdf'),
+  (3, 'W pustyni i w puszczy', 'Henryk Sienkiewicz', 'Gebethner i Wolff', '1911-05-08','/pdf/w-pustyni-i-w-puszczy.pdf'),
+  (4, 'Zbrodnia i kara', 'Fiodor Dostojewski', 'Wydawnictwo MG', '1866-01-01','/pdf/zbrodnia i kara.pdf'),
+  (5, 'Dziady', 'Adam Mickiewicz', 'Czytelnik', '1823-01-01','/pdf/dziady.pdf'),
+  (6, 'Wesele', 'Stanisław Wyspiański', 'Wydawnictwo Literackie', '1901-11-26','/pdf/wesele.pdf'),
+  (7, 'Zniewolony umysł', 'Czesław Miłosz', 'PIW', '1953-01-01','/pdf/zniewolony.pdf'),
+  (8, 'Ogniem i mieczem', 'Henryk Sienkiewicz', 'Gebethner i Wolff', '1884-03-12','/pdf/ogniem-i-mieczem.pdf'),
+  (9, 'Chłopi', 'Władysław Reymont', 'Czytelnik', '1904-01-01','/pdf/chlopi-czesc-pierwsza-jesien.pdf'),
+  (10, 'Balladyna', 'Juliusz Słowacki', 'Wydawnictwo Literackie', '1839-01-01','/pdf/balladyna.pdf'),
+  (11, '"Hobbit, czyli tam i z powrotem', 'J.R.R. Tolkien', 'wydawnictwo Amber', '1937-05-01','/pdf/tolkienjrr__hobbit_czyli_tam_i_z_powrotem.pdf'),
+  (12, 'Władca Pierścieni(wyprawa)', 'J.R.R. Tolkien', 'Wydawnictwo Amber', '1954-07-29','/pdf/J.R.R._Tolkien-Wyprawa.pdf'),
+  (13, 'Mały Książę', 'Antoine de Saint-Exupéry', 'Gallimard', '1943-04-06','/pdf/maly-ksiaze.pdf'),
+  (14, 'Złodziejka książek', 'Markus Zusak', 'wydawnictwo Znak', '2005-06-01','/pdf/Zodziejka-ksiek.pdf'),
+  (15, 'Mistrz i Małgorzata', 'Michaił Bułhakow', 'Sovremennyj pisatel', '1966-01-01','/pdf/mistrz.pdf'),
+  (16, 'Słowo o Jakubie Szeli', 'Kazimierz Wierzyński', 'PIW', '1937-01-01','/pdf/slowo-o-jakobie-szeli.pdf'),
+  (17, 'Jądro ciemności', 'Joseph Conrad', 'wydawnictwo Wolne Lektury', '1899-03-12','/pdf/jadro-ciemnosci.pdf'),
+  (18, 'Folwark zwierzęcy', 'George Orwell', 'Secker and Warburg', '1945-08-17','/pdf/Folwark-Zwierzęcy.pdf'),
+  (19, 'Doktor Żywago', 'Boris Pasternak', 'wydawnictwo Wolne Lektury', '1957-06-11','/pdf/Doktor-Zywago.pdf'),
+  (20, 'Thinking, Fast and Slow', 'Daniel Kahneman', 'wydawnictwo Farrar, Straus and Giroux', '2011-02-20','/pdf/Thinking-Fast-and-Slow.pdf'),
+  (21, 'Zew krwi', 'Jack London', 'Książka i Wiedza', '1903-01-01','/pdf/Zew-krwi.pdf'),
+  (22, 'Podróż do wnętrza Ziemi', 'Jules Verne', 'Wydawnictwo Albatros', '1864-11-25','/pdf/WYPRAWA DO WNĘTRZA ZIEMI.pdf'),
+  (23, 'Fahrenheit 451', 'Ray Bradbury', 'Ballantine Books', '1953-10-19','/pdf/Fahrenheit_451.pdf'),
+  (24, 'Krzyżacy', 'Henryk Sienkiewicz', 'wydawnictwo Iskry', ' 1900-08-23','/pdf/krzyzacy.pdf'),
+  (25, 'Miasto w zieleni i błękicie', 'Olga Tokarczuk', 'wydawnictwo Wydawnictwo Literackie ', '1993-09-11','/pdf/Miasto-w-zieleni-i-blekicie.pdf'),
+  
+  
+  
+  (26, 'Cicha noc', 'Mikołaj Łoziński', 'Wydawnictwo SQN', '2019-10-22','/pdf/cicha-noc.pdf'),
+  (27, 'Ballada o pewnej panience', 'Adam Mickiewicz', 'wydawnictwo Ossolineum', ' 1822-10-11','/pdf/Ballada o pewnej panience .pdf'),
+  (28, 'Nad Niemnem', 'Eliza Orzeszkowa', ' wydawnictwo Czytelnik', '1888-09-12','/pdf/nad-niemnem.pdf'),
+  (29, 'Achaja', 'Andrzej Ziemiański', 'Fabryka Słów', '2002-05-24','/pdf/Achaja-tom-1.pdf'),
+  (30, 'Człowiek z blizną', 'Mario Puzo', 'wydawnictwo Czytelnik', '1969-05-15','/pdf/Człowiek z blizną - Jerzy Edigey.pdf'),
+  (31, 'Siedem lat w Tybecie', 'Heinrich Harrer', ' wydawnictwo Znak', ' 1953-07-19','/pdf/Siedem lat w Tybecie.pdf'),
+  (32, 'Alicja w Krainie Czarów', 'Lewis Carroll ', 'wydawnictwo Macmillan Publishers', ' 1865-04-22','/pdf/alicja-w-krainie-czarow-slomczynski.pdf'),
+  (33, 'Ludzie bezdomni', 'Stefan Żeromski', 'Wydawnictwo Literackie', '1900-01-01','/pdf/ludzie-bezdomni.pdf'),
+  (34, 'Tajemnica domu Helclów', 'Anna Brzezińska', 'Wydawnictwo MAG', '2016-10-07','/pdf/TajemnicadomuHelclow_ISSUU.pdf'),
+  (35, 'Ostatni wykład', 'Randy Pausch', 'Wydawnictwo Literackie', '2008-04-08','/pdf/Ostatni wykład.pdf'),
+  (36, 'Białe noce', 'Fiodor Dostojewski', 'Wydawnictwo Literackie', '1848-01-01','/pdf/BialeNoce.pdf'),
+  (37, 'Diuna', 'Frank Herbert', 'Chilton Books', '1965-08-01','/pdf/Frank Herbert.pdf'),
+  (38, 'Szeptucha', 'Lidia Ostałowska', 'Wydawnictwo Literackie', '2003-01-01','/pdf/Szeptucha.pdf'),
+  (39, 'Rok 1984(część pierwsza)', 'George Orwell', 'Secker & Warburg', '1949-06-08','/pdf/1984.pdf'),
+  (40, 'GRA O TRON - Pieśń Lodu i Ognia', 'George R.R. Martin', 'Voyager Books', '1996-08-01','/pdf/GRA O TRON.pdf'),
+  (41, 'Komandosi z Navarony', 'Alistair MacLean', 'Gebethner i Wolff', '1957-04-26','/pdf/Komandosi z Nawarony.pdf'),
+  (42, 'Solaris', 'Stanisław Lem', 'wydawnictwo Czytelnik', '1961-09-26','/pdf/Solaris.pdf'),
+  (43, 'Mózg. Opowieść o Nas', ' David Eagleman', 'wydawnictwo Spacja Słów', '2016-09-05','/pdf/Mózg. Opowieść o Nas - D. E..pdf'),
+  (44, 'Rosa Luxemburg. Życie i myśl', 'Elżbieta Ettinger', 'Wydawnictwo Nisza', '2022-01-17','/pdf/Rosa Luxemburg. Życie i myśl.pdf'),
+  (45, 'Kiedy byłem dziełem sztuki', 'Tom Lubbock', 'Wydawnictwo Karakter', '2012-10-19','/pdf/Kiedy byłem dziełem sztuki.pdf'),
+  (46, 'Krew elfów', 'Andrzej Sapkowski', 'SuperNOWA', '1994-01-01','/pdf/KrewElfow_I.pdf'),
+  (47, 'Pacyfik i Eurazja. O wojnie', 'Bartosiak Jacek', 'wydawnictwo Znak', '2010-11-16','/pdf/Bartosiak Jacek - Pacyfik i Eurazja. O wojnie.pdf'),
+  (48, 'Lepszy świat', 'Andrzej Stasiuk', 'Wydawnictwo Czarne', '2019-10-21','/pdf/Lepszy swiat.pdf'),
+  (49, 'Sapiens: Od zwierząt do bogów', 'Yuval Noah Harari ', 'wydawnictwo Czarne', ' 2014-01-14','/pdf/Sapiens. Od zwierząt do bogów.pdf'),
+  (50, 'Człowiek w poszukiwaniu sensu', 'Viktor E. Frankl', 'Wydawnictwo Znak', '1946-03-26','/pdf/Czlowiek w poszukiwaniu sensu - Viktor E. Frankl.pdf');

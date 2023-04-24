@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="D_wypozyczenia.css">
+    <title>Wypożyczenia</title>
+    <link rel="icon" type="image/png" href="3.png" sizes="96x96" />
+</head>
+
+<body>
+    <tr>
+        <td align="center"><img src="logo.jpg" name="ksiazka" align="left" weight="90px" height="50px"></td>
+    </tr>
+    <h1>
+        <center><u>Wypożyczenia w naszej Bibliotece </u></center>
+    </h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="A_strona-gl.jsp">Strona główna</a></li>
+                <li><a href="B_O bibiotece.jsp">O bibliotece</a></li>
+                <li><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
+                <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>
+                <li><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
+                <li><a href="F_personel.jsp">Prersonel</a></li>
+               <!-- <li><a href="G_login.jsp">Logowanie</a></li>
+                <li><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+                <li><a href= "logout">Wyloguj się</a></li>
+                <li><a > <%=session.getAttribute("email-login") %> </a>
+                
+                <!-- tu dodać listę rozwijalną dla nazwy wypożyczonych książek prze osobę 
+                
+                
+                 -->
+                
+                </li>
+
+
+        </nav>
+
+    </header>
+
+<h1 id="cytat">„Czytanie dobrych książek jest niczym rozmowa z najwspanialszymi ludźmi minionych czasów.” – Kartezjusz</h1>
+<h1>Wszytakie książki wypożyczne przez naszych użytkowników </h1>
+
+
+
+<a href="‪data:image/jpeg;base64,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" download>lalka</a>
+<a href="‪‪https://wolnelektury.pl/media/book/pdf/pan-tadeusz.pdf" download>pan tadeusz</a>
+<a href="‪C:\Users\User\Desktop\w-pustyni-i-w-puszczy (1).pdf" download>pustynia</a>
+<ul>
+    <li>x</li>
+    <li>x</li>
+    <li>x</li>
+    <li>x</li>
+</ul>
+
+<footer>
+    <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
+    <p>Adres: ul. Biblioteczna 1, 00-217 Warszawa Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+
+</footer>
+
+
+
+</body>
+
+</html>
