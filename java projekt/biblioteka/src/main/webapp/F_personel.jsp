@@ -22,17 +22,19 @@
     </h1>
     <header>
         <nav>
-            <ul>
-                <li><a href="A_strona-gl.jsp">Strona główna</a></li>
-                <li><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
-                <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>
-                <li><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li><a href="F_personel.jsp">Prersonel</a></li>
-               <!-- <li><a href="G_login.jsp">Logowanie</a></li>
-                <li><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
-                <li><a href= "logout">Wyloguj się</a></li>
-                <li><a > <%=session.getAttribute("email-login") %> </a></li>
+             <ul>
+                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
+                <li class="znacznik"><a href="F_personel.jsp">Prersonel</a></li>
+               <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
+                <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+                
+                <li ><a > <%=session.getAttribute("email-login") %> </a></li>
+                <li  ><a href= "logout"><button class="pobierz" >Wyloguj się</button></a></li>
+                
             </ul>
 
         </nav>
@@ -62,10 +64,54 @@
             <h3 id="kontakt-napis">
                 <center>Kontakt</center>
             </h3>
+			
+			 <div>
+    <h1>Formularz do wysłania pytań lub problemów napotkanych na naszej stronie </h1>
+<form class="kontakt" action="https://api.sheetmonkey.io/form/uAqJFTu2v7ZeCxUxJrE6fA" method="post">
+  			
+ 			<input placeholder="podaj swój adres e-mail" type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off">
+ 			
+  			<textarea rows="5" cols="21" type="text" name="opis" required placeholder="wpisz pytanie"></textarea>	
+  				<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" ><br>
+  				<input type="submit" value="Wyślij" >
+			</form>
+</div> 
 
-            <p>W razie pytań prosimy o kontak e-mail: infobiblio@interia.pl</p>
-            <p>Jeśli chodzi o pytanie do konkretnej osoby to prosimy kontaktować się na ten sam e-mail co wyżej tylko w
-                tytule podać konkretnego spoecjalistę.</p>
+
+<!--
+<div>
+    <h1>Formularz do wysłania pytań lub problemów napotkanych na naszej stronie </h1>
+<form class="kontakt" action="wiadomosc" method="post">
+  			
+ 			<input placeholder="podaj swój adres e-mail" type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off">
+ 			
+  			<textarea rows="5" cols="21"  name="opis" required placeholder="wpisz pytanie"></textarea>	
+  				<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" ><br>
+  				<input type="submit" value="Wyślij" >
+			</form>
+</div>
+		-->
+		
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     
+	<script type="text/javascript">
+	
+	$('.kontakt').submit(function() {
+	
+	alert("Dziękujemy za przesłanie swojej wiadomości. Skontaktujemy się z Tobą wkrótce.");
+
+	  // zwrócenie wartości true, aby formularz mógł zostać wysłany
+	  return true;
+		
+	});
+		
+		
+	</script>	
+			
+			
+        
+            <p id="kom">Jeśli chodzi o pytanie do konkretnej osoby to prosimy kontaktować się przez wysłanie pytania w formularzu po wyżej, 
+             tylko wtedy na początku podać konkretnego spoecjalistę.</p>
 
         </div>
     </div>

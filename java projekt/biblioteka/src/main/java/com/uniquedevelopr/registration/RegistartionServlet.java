@@ -2,10 +2,14 @@ package com.uniquedevelopr.registration;
 
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Base64;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +29,9 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistartionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	
+	
+	
     
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -34,15 +41,25 @@ public class RegistartionServlet extends HttpServlet {
 		String nazwisko = request.getParameter("Anazwisko");
 		String email = request.getParameter("Aemail");
 		String haslo = request.getParameter("Ahaslo1");
+		String hasloZahaszowane = null;
 		RequestDispatcher dispatcher = null;
 		Connection con = null;
+		
+		
+		try {
+		    MessageDigest digest = MessageDigest.getInstance("SHA-256");
+		    byte[] hash = digest.digest(haslo.getBytes(StandardCharsets.UTF_8));
+		    hasloZahaszowane = Base64.getEncoder().encodeToString(hash);
+		} catch (NoSuchAlgorithmException e) {
+		    e.printStackTrace();
+		}
 		
 		
 
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie","root","P@ssw0rd");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie?useUnicode=true&characterEncoding=UTF-8","root","P@ssw0rd");
 			
 			// Sprawdź, czy email już istnieje w bazie danych
             PreparedStatement checkEmailStmt = con.prepareStatement("SELECT email FROM users WHERE email=?");
@@ -60,7 +77,7 @@ public class RegistartionServlet extends HttpServlet {
 			pst.setString(1, imie);
 			pst.setString(2, nazwisko);
 			pst.setString(3, email);
-			pst.setString(4, haslo);
+			pst.setString(4, hasloZahaszowane);
 			
 			int rowCount = pst.executeUpdate();
 			dispatcher = request.getRequestDispatcher("G_login.jsp");

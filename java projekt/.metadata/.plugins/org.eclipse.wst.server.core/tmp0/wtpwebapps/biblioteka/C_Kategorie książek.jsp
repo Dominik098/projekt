@@ -30,16 +30,18 @@
     <header>
         <nav>
             <ul>
-                <li><a href="A_strona-gl.jsp">Strona główna</a></li>
-                <li><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
-                <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>
-                <li><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li><a href="F_personel.jsp">Prersonel</a></li>
-               <!-- <li><a href="G_login.jsp">Logowanie</a></li>
-                <li><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
-                <li><a href= "logout">Wyloguj się</a></li>
-                <li><a > <%=session.getAttribute("email-login") %> </a></li>
+                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
+                <li class="znacznik"><a href="F_personel.jsp">Prersonel</a></li>
+               <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
+                <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+                
+                <li ><a > <%=session.getAttribute("email-login") %> </a></li>
+                <li  ><a href= "logout"><button class="wyloguj" >Wyloguj się</button></a></li>
+                
             </ul>
 
         </nav>
