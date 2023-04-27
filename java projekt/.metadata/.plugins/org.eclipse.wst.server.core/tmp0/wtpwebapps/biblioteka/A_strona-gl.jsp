@@ -37,7 +37,7 @@
                 <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
                 <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
                 <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li class="znacznik"><a href="F_personel.jsp">Prersonel</a></li>
+                <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 
