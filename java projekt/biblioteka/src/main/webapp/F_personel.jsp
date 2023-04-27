@@ -65,32 +65,30 @@
                 <center>Kontakt</center>
             </h3>
 			
-			 <div>
-    <h1>Formularz do wysłania pytań lub problemów napotkanych na naszej stronie </h1>
-<form class="kontakt" action="https://api.sheetmonkey.io/form/uAqJFTu2v7ZeCxUxJrE6fA" method="post">
+			
+			
+	 <div>
+   			 <h1>Formularz do wysłania pytań lub problemów napotkanych na naszej stronie </h1>
+   			 
+		<form class="kontakt" action="https://api.sheetmonkey.io/form/uAqJFTu2v7ZeCxUxJrE6fA" method="post">
   			
- 			<input placeholder="podaj swój adres e-mail" type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off">
- 			
-  			<textarea rows="5" cols="21" type="text" name="opis" required placeholder="wpisz pytanie"></textarea>	
-  				<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" ><br>
-  				<input type="submit" value="Wyślij" >
-			</form>
-</div> 
+  			
+  			<input placeholder="Podaj imię" type="text" name="imie"  autocomplete="off">
+  			<input  type="hidden" name="email" value=" <%= session.getAttribute("email-login") %>">
+  			
+ 			<!-- <input placeholder="podaj swój adres e-mail" type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off"> -->
+  			
+  			<textarea rows="5" cols="21" type="text" name="opis" required placeholder="Wpisz pytanie"></textarea>	
+  			<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" ><br>
+  			<input type="submit" value="Wyślij" >
+		</form>
+		
+	</div> 
 
 
-<!--
-<div>
-    <h1>Formularz do wysłania pytań lub problemów napotkanych na naszej stronie </h1>
-<form class="kontakt" action="wiadomosc" method="post">
-  			
- 			<input placeholder="podaj swój adres e-mail" type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off">
- 			
-  			<textarea rows="5" cols="21"  name="opis" required placeholder="wpisz pytanie"></textarea>	
-  				<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" ><br>
-  				<input type="submit" value="Wyślij" >
-			</form>
-</div>
-		-->
+
+
+		
 		
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      

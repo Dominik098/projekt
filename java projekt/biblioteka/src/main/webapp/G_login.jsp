@@ -23,6 +23,8 @@
   	<input type="hidden" id="status" value="<%= request.getAttribute("status") %>" >
   	
   	<input type="hidden" id="status_rej" value="<%= request.getAttribute("status_rej") %>" >
+  	
+  	<input type="hidden" id="status_new" value="<%=request.getAttribute("status_new") %>">
 
 
   <div class="login_form_container">
@@ -45,11 +47,22 @@
   </form>
       <div class="fotter">
         <a>Jeśli nie masz konta to:</a>
-        <a href="H_rejestracja.jsp">Zarejsestruj sie</a>
+        <a href="H_rejestracja.jsp"><button class="klik" >Zarejsestruj sie</button></a>
+        
       </div>
+      <p>Jeśli nie pamiętasz hasła to: <a href="forgotPassword.jsp"><button class="pobierz">Przejdź tutaj</button></a></p>
+      
   </div>
 
 </div>
+
+
+
+
+
+
+
+
 
 
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -67,6 +80,25 @@
         {
             swal("Tak jest!!!","Udało się zarejestrować. Teraz możesz się zalogować.","success");
             document.getElementById("status_rej").value="";
+
+        }
+        
+        
+        var status_new_failed = document.getElementById("status_new").value;
+        if( status_new_failed == "resetFailed")
+        {
+
+            swal("Błąd zmiany hasła","Nie udało się zmienić hasła","error");
+            document.getElementById("status_new").value="";
+
+        }
+
+        var status_new_success = document.getElementById("status_new").value;
+        if(status_new_success == "resetSuccess")
+        {
+
+            swal("Udało się","Zmiana hasła przebiegła pomyślnie","success");
+            document.getElementById("status_new").value="";
 
         }
 	

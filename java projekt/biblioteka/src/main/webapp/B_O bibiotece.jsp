@@ -42,7 +42,7 @@
     </header>
 
 
-    <h2>Witamy w naszej naukowej bibliotece </h2>
+    <h2>Witamy w naszej publicznej bibliotece </h2>
     <h3>"W bibliotece możemy odnaleźć drogę do mądrości przeszłych wieków i otworzyć drzwi do wiedzy dla przyszłych
         pokoleń."</h3>
     <img src="https://cdn.pixabay.com/photo/2017/07/02/09/03/books-2463779__340.jpg" slt="zdjęcie" style="float:left "
