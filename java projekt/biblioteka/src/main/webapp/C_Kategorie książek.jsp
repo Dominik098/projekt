@@ -47,8 +47,9 @@
         </nav>
 
     </header>
-    <h1>Księżki </h1>
-    
+	    <h1>Książki </h1>
+	    
+<a href=Dodaj_ksiazke.jsp><button class="dodanie">Przejdź do formularza<br> aby dodać książkę </button></a>
     <h3>Oto lista wszystkich książek dostępnych do wypożyczenia w bibliotece </h3>
     
 <table>
@@ -111,12 +112,17 @@
     %>
 </table>
 
+
+
+
+
 <script>
     // Funkcja pobierająca plik PDF
     function pobierzPDF(link) {
         window.location.href = link;
     }
 </script>
+    
     
 
     <footer>

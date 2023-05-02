@@ -1,0 +1,154 @@
+body {
+    background-color: rgb(210, 210, 222);
+   
+}
+
+header {
+    border: 4px;
+    background-color: aqua;
+    border: 4px solid blue;
+    padding-bottom: 2px;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: blueviolet;
+    
+}
+
+h3 {
+    text-align: center;
+    margin-left: 17px;
+    color: blueviolet;
+    font-family: Arial;
+    font-size: 20px;
+
+}
+
+
+
+
+ul li {
+    display: inline;
+    margin-left: 5px;
+    padding: 5px;
+
+}
+
+ul {
+    text-align: center;
+}
+
+a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.znacznik:hover {
+    background-color: white;
+}
+
+
+
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: gray;
+
+
+    bottom: 0;
+    margin-top: auto;
+    width: 100%;
+    padding: 5px;
+}
+
+
+
+table {
+        background-color: #f9f9f9;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+   
+    tr:hover {
+  border-bottom: 2px solid red;
+}
+
+
+.pobierz{
+	 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pobierz:hover {
+  background-color: #0056b3;
+}
+
+
+
+.wyloguj{
+	 
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  background-color:  aqua;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wyloguj:hover {
+  background-color: #0056b3;
+}
+ .dodanie{
+ display: inline-block;
+  padding: 10px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  background-color:  rgb(210, 210, 222);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+ }
+ .dodanie:hover{}
+
+

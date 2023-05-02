@@ -1,0 +1,78 @@
+package com.uniquedevelopr.registration;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+/**
+ * Servlet implementation class DodajKsiazke
+ */
+@WebServlet("/DodajKsiazke")
+
+
+
+
+
+public class DodajKsiazkeServlet extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            // Ustawianie kodowania znaków na UTF-8
+            request.setCharacterEncoding("UTF-8");
+
+            // Pobieranie danych z formularza
+            String tytul = request.getParameter("tytuł");
+            String autor = request.getParameter("autor");
+            String wydawnictwo = request.getParameter("wydawnictwo");
+            String data_publikacji = request.getParameter("data_publikacji");
+            String pdf = request.getParameter("pdf");
+
+            // Połączenie z bazą danych
+            String url = "jdbc:mysql://localhost:3306/Biblioteka";
+            String user = "root";
+            String password = "P@ssw0rd";
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            // Dodanie książki do bazy danych
+            String sql = "INSERT INTO Książki (tytuł, autor, wydawnictwo, data_publikacji, pdf) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, tytul);
+            ps.setString(2, autor);
+            ps.setString(3, wydawnictwo);
+            ps.setString(4, data_publikacji);
+            ps.setString(5, pdf);
+            ps.executeUpdate();
+
+            // Zamykanie połączenia z bazą danych
+            ps.close();
+            conn.close();
+
+            // Przekierowanie na stronę z potwierdzeniem dodania książki
+            response.sendRedirect("C_katagorie.jsp");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // W przypadku błędu, wyświetlenie odpowiedniego komunikatu na stronie
+            request.setAttribute("blad", "Wystąpił błąd podczas dodawania książki.");
+            request.getRequestDispatcher("A_strona-gl.jsp").forward(request, response);
+        }
+    }
+
+}

@@ -1,0 +1,51 @@
+package com.uniquedevelopr.registration;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+
+@WebServlet("/Dodajksiazke")
+public class Dodajksiazke extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
+		
+		  try {
+		    // Połączenie z bazą danych
+		    String url = "jdbc:mysql://localhost:3306/Biblioteka";
+		    String user = "root";
+		    String password = "P@ssw0rd";
+		    Connection conn = DriverManager.getConnection(url, user, password);
+
+		    // Przetworzenie danych z formularza
+		    String tytul = request.getParameter("tytul");
+		    String autor = request.getParameter("autor");
+		    String wydawnictwo = request.getParameter("wydawnictwo");
+		    String data_publikacji = request.getParameter("data_publikacji");
+		    String pdf = request.getParameter("pdf");
+
+		    // Dodanie książki do bazy danych
+		    String sql = "INSERT INTO Książki (tytuł, autor, wydawnictwo, data_publikacji, pdf) VALUES (?, ?, ?, ?, ?)";
+		    PreparedStatement ps = conn.prepareStatement(sql);
+		    ps.setString(1, tytul);
+		    ps.setString(2, autor);
+		    ps.setString(3, wydawnictwo);
+		    ps.setString(4, data_publikacji);
+		    ps.setString(5, pdf);
+		    ps.executeUpdate();
+
+		    // Zamykanie połączenia z bazą danych
+		    ps.close();
+		    conn.close();
+		  } catch (SQLException e) {
+		    e.printStackTrace();
+		  
+	}}
+
+}

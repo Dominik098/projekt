@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wypożyczalnia samochodów - Rezerwacja</title>
+	<link rel="stylesheet" href="styl-rezerwacji.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="Strona_glowna.jsp">Strona główna</a></li>
+			<li><a href="rezerwacja.jsp">Rezerwacje</a></li>
+		</ul>
+	</nav>
+	<h1><b>Rezerwacja samochodu</b></h1>
+
+	<div class="container">
+		
+		<form action="rezerwacja" method="post">
+			<div class="form-group">
+				<label style="color:white; " for="name">Imie i nazwisko</label>
+				<input type="text" placeholder="Imie i nazwisko" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+				<label style="color:white; " for="email">Adres e-mail</label>
+				<input type="email" placeholder="e-mail" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label style="color:white; " for="phone">Numer telefonu</label>
+				<input type="tel"placeholder="numer telefonu" id="phone" name="phone" required>
+			</div>
+			<div class="form-group">
+				<label style="color:white; " for="car">Wybierz samochód</label>
+				<select id="car" name="car" required>
+					<option value="">Wybierz samochódd</option>
+					<option value="Audi A4">Audi A4</option>
+					<option value="Volkswagen">Volkswagen Passat Combi</option>
+					<option value="Fabia">Skoda Fabia IV</option>
+					<option value="Toyota Camry">Toyota Camry</option>
+					<option value="Opel Astra">Opel Astra</option>
+					<option value="Skoda Octavia">Skoda Octavia</option>
+					<option value="Skoda Octavia Combi">Skoda Octavia Combi</option>
+					<option value="Toyota RAV4">Toyota RAV4</option>
+					<option value="Fiat 500">Fiat 500</option>
+					<option value="Renault Clio">Renault Clio</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label style="color:white; " for="date">Data odbioru</label>
+				<input type="date" id="date" name="date" required>
+			</div>
+			<div class="form-group">
+				<label style="color:white; " for="time">Godzina odbioru</label>
+				<input type="time" id="time" name="time" required>
+			</div>
+			<div class="form-group">
+				<button type="submit">Zarezerwuj</button>
+			</div>
+		</form>
+	</div>
+
+	<footer>
+	<p style="text-align:left">
+		Kontakt:<br>
+		e-mail: wypozyczalnia@gmail.com<br>
+		tel: 601178612<br>
+		Adres: Bony Królowej 9, 05-190 Nasielsk
+		</p>
+		<a style="color:white;" href="kontakt.jsp" class="button"> Zgłoś problem!</a>
+		<p>Wypożyczalnia samochodów &copy; 2023. Wszelkie prawa zastrzeżone.</p>
+	</footer>
+</body>
+</html>
