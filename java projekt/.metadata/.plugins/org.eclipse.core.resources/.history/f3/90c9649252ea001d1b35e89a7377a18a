@@ -1,0 +1,89 @@
+package com.uniquedevelopr.registration;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Base64;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class login
+ */
+@WebServlet("/login")
+public class login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String email = request.getParameter("email-login");
+		String password = request.getParameter("haslo-login");
+		String hashedPassword = null;
+		HttpSession session = request.getSession();
+		RequestDispatcher dispatcher = null;
+		boolean isAdmin = false;
+			
+		try {
+		    MessageDigest digest = MessageDigest.getInstance("SHA-256");
+		    byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+		    hashedPassword = Base64.getEncoder().encodeToString(hash);
+		} catch (NoSuchAlgorithmException e) {
+		    e.printStackTrace();
+		}
+			
+		try 
+		{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie","root","P@ssw0rd");
+			
+			// check if the user is an admin
+			PreparedStatement pst = con.prepareStatement("select * from admin where email = ? and password = ? ");
+			pst.setString(1, email);
+			pst.setString(2, hashedPassword);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next())
+			{
+				isAdmin = true;
+				session.setAttribute("email-login", rs.getString("email"));
+				dispatcher = request.getRequestDispatcher("A_strona-gl.jsp");
+			} 
+			else 
+			{
+				// check if the user is a regular user
+				pst = con.prepareStatement("select * from users where email = ? and password = ? ");
+				pst.setString(1, email);
+				pst.setString(2, hashedPassword);
+				rs = pst.executeQuery();
+				if(rs.next())
+				{
+					session.setAttribute("email-login", rs.getString("email"));
+					dispatcher = request.getRequestDispatcher("U_strona-gl.jsp");
+				}
+				else 
+				{
+					request.setAttribute("status", "failed");
+					dispatcher = request.getRequestDispatcher("G_login.jsp");
+				}
+			}
+			
+			dispatcher.forward(request, response);
+				
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}

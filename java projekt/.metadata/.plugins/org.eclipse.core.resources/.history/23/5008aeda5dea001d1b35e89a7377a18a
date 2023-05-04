@@ -38,58 +38,46 @@ p {
     font-family: Times;
     font-size: 20px;
 }
-a {
-    text-decoration: none;
-  }
 
 p:hover {
     color: green;
 }
 
-li{
-	text-align: left;
-    color: black
-}
-div.opcje li {
-    position: relative;
-    text-align: left;
-    color: black
-  }
-  
-  div.opcje li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  div.opcje li:hover::before {
-    opacity: 1;
-  }
 
-.col1, .col2 ,.col3{
-    display: inline-block;
-    margin: 0px;
-    vertical-align: top;
+li:hover {
+    background-color: aqua;
+    color: black;
+}
+
+.col1 {
     text-align: center;
-    width: 30%; 
-    font-size: 18px;
-    
-    background-image: url('https://cdn.pixabay.com/photo/2021/01/21/16/49/books-5937823__340.jpg'); background-size: cover; background-position: center;width: 435px; height: 400px; opacity: 1;
-    
-}
+    float: left;
+    padding-left: 250px;
+    font-size: 20px;
 
 
-@media screen and (max-width: 600px) {
-    .col1, .col2,.col3 {
-        width: 100%; 
-    }
+
 }
+
+.col2 {
+    text-align: center;
+    float: left;
+    padding-left: 20px;
+    font-size: 20px;
+
+    padding-right: 10px;
+}
+
+.col3 {
+
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 10px;
+    font-size: 20px;
+
+    float: left;
+}
+
 h3 {
     font-size: 30px;
     color: red;
@@ -100,7 +88,11 @@ h4 {
     color: red;
 }
 
+li {
+    text-align: left;
+    color: rgb(173 255 47);
 
+}
 
 
 #scroll-to-top {

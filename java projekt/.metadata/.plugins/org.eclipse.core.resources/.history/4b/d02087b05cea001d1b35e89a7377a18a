@@ -44,7 +44,8 @@
     <h2>"Biblioteka to skarbnica wiedzy, która otwiera drzwi do nieograniczonych możliwości poznawczych i kulturalnych."
     </h2>
     <h4>Hasła biblioteczne które warto znać: </h4>
-<div class="opcje">
+
+
     <div class="col1">
         <a href="#1">
             <li>Akapit</li>
@@ -224,12 +225,11 @@
         </a>
     </div>
 
-</div>
+    <div
+        style="background-image: url('zdj1.png'); background-size: cover; background-position: center; height: 450px; opacity: 1;">
+    </div>
 
-    
-    
-</div>
-    
+    </div>
 
     <h3>Opis pojęć:</h3>
     <p id="1">Akapit – wcięcie przy lewym marginesie, wydzielające odrębną część całości treściowej</p>

@@ -46,10 +46,8 @@ p:hover {
     color: green;
 }
 
-li{
-	text-align: left;
-    color: black
-}
+
+
 div.opcje li {
     position: relative;
     text-align: left;
