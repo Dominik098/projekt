@@ -23,6 +23,13 @@
 	background-color: #dee2e6;
 	border: #dee2e6
 }
+.btn{
+    background-color: aqua;
+    color: black;
+    border-radius: 33px;
+}
+
+
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body bg-info'>
@@ -42,7 +49,7 @@
 						<!-- Main Heading -->
 						<div class="row justify-content-center align-items-center pt-3">
 							<h1>
-								<strong>Reset Password</strong>
+								<strong>Zmiana hasła</strong>
 							</h1>
 						</div>
 						<div class="pt-3 pb-3">
@@ -50,7 +57,7 @@
 								<!-- User Name Input -->
 								<div class="form-group row justify-content-center px-3">
 									<div class="col-9 px-0">
-										<input type="password" name="password" placeholder="&#xf084; &nbsp; New Password"
+										<input type="password" name="password" placeholder="&#xf084; &nbsp; Nowe hasło"
 											class="form-control border-info placeicon">
 									</div>
 								</div>
@@ -58,7 +65,7 @@
 								<div class="form-group row justify-content-center px-3">
 									<div class="col-9 px-0">
 										<input type="password" name="confPassword"
-											placeholder="&#xf084; &nbsp; Confirm New Password"
+											placeholder="&#xf084; &nbsp; Powtórz hasło"
 											class="form-control border-info placeicon">
 									</div>
 								</div>
@@ -66,7 +73,7 @@
 								<!-- Log in Button -->
 								<div class="form-group row justify-content-center">
 									<div class="col-3 px-3 mt-3">
-										<input type="submit" value="Reset"
+										<input type="submit" value="Zmień"
 											class="btn btn-block btn-info">
 									</div>
 								</div>

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!doctype html>
 <html>
 <head>
@@ -56,32 +57,25 @@ body {
 		<div class="row justify-content-center">
 			<div class="col-lg-8 col-md-10">
 				<div class="forgot">
-					<h2>Forgot your password?</h2>
-					<p>Change your password in three easy steps. This will help you
-						to secure your password!</p>
-					<ol class="list-unstyled">
-						<li><span class="text-primary text-medium">1. </span>Enter
-							your email address below.</li>
-						<li><span class="text-primary text-medium">2. </span>Our
-							system will send you an OTP to your email</li>
-						<li><span class="text-primary text-medium">3. </span>Enter the OTP on the 
-						next page</li>
-					</ol>
-				</div>
-				<form class="card mt-4" action="forgotPassword" method="POST">
-					<div class="card-body">
-						<div class="form-group">
-							<label for="email-for-pass">Enter your email address</label> <input
-								class="form-control" type="text" name="email" id="email-for-pass" required=""><small
-								class="form-text text-muted">Enter the registered email address . Then we'll
-								email a OTP to this address.</small>
+					<h2>Zapomniałeś hasła?</h2>
+                    <p>Zmień swoje hasło w trzech prostych krokach!!</p>
+                    <ol class="list-unstyled">
+                        <li><span class="text-primary text-medium">1. </span>Podaj swój adres e-mail.</li>
+                        <li><span class="text-primary text-medium">2. </span>Otrzymasz wiadomość z kodem na wskazany e-mail.</li>
+                        <li><span class="text-primary text-medium">3. </span>Wpisz kod na następnej stronie.</li>
+                    </ol>
+                </div>
+                <form class="card mt-4" action="forgotPassword" method="POST">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="email-for-pass">Wpisz adres e-mail</label> <input
+                                class="form-control" type="text" name="email" id="email-for-pass" required=""><small
+                                class="form-text text-muted">Podaj e-mail z rejestracji by otrzymać na niego kod.</small>
 						</div>
 					</div>
 					<div class="card-footer">
-						<button class="btn btn-success" type="submit">Get New
-							Password</button>
-						<button class="btn btn-danger" type="submit">Back to
-							Login</button>
+						<button class="btn btn-success" type="submit"> Zresetuj hasło </button>
+						<button class="btn btn-danger" type="submit" onclick="window.location.href='G_login.jsp';">Powrót do logowania</button>
 					</div>
 				</form>
 			</div>

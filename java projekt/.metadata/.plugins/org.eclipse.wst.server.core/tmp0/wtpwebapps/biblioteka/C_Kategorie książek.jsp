@@ -41,11 +41,7 @@
                 
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
                 <li  ><a href= "logout"><button class="wyloguj" >Wyloguj się</button></a></li>
-                 <% // sprawdzenie czy użytkownik jest adminem
-                String userRole = (String) session.getAttribute("userRole");
-                if (userRole != null && userRole.equals("admin")) { %>
-                    <li><a href=Dodaj_ksiazke.jsp><button class="dodanie">Przejdź do formularza<br> aby dodać książkę </button></a></li>
-                <% } %>
+               
                 
             </ul>
 

@@ -23,13 +23,6 @@
 	background-color: #dee2e6;
 	border: #dee2e6
 }
-.btn{
-    background-color: aqua;
-    color: black;
-    border-radius: 33px;
-}
-
-
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body bg-info'>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
 <html>
 <head>
 
@@ -16,6 +18,8 @@
 .form-gap {
     padding-top: 70px;
 }
+
+
 </style>
 </head>
 
@@ -30,11 +34,11 @@
 							<h3>
 								<i class="fa fa-lock fa-4x"></i>
 							</h3>
-							<h2 class="text-center">Enter OTP</h2>
+							<h2 class="text-center">Wpisz OTP</h2>
 									<%
 		  			if(request.getAttribute("message")!=null)
 		  			{
-		  				out.print("<p class='text-danger ml-1'>"+request.getAttribute("message")+"</p>");
+		  				out.print("OTP został wysyłany na Twój podany e-mail");
 		  			}
 		  
 		  %>
@@ -48,14 +52,14 @@
 										<div class="input-group">
 											<span class="input-group-addon"><i
 												class="glyphicon glyphicon-envelope color-blue"></i></span> <input
-												id="opt" name="otp" placeholder="Enter OTP"
+												id="opt" name="otp" placeholder="Wpisz OTP"
 												class="form-control" type="text" required="required">
 										</div>
 									</div>
 									<div class="form-group">
 										<input name="recover-submit"
 											class="btn btn-lg btn-primary btn-block"
-											value="Reset Password" type="submit">
+											value="Reset hasła" type="submit">
 									</div>
 
 									<input type="hidden" class="hide" name="token" id="token"

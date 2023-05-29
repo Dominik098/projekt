@@ -38,7 +38,7 @@
 									<%
 		  			if(request.getAttribute("message")!=null)
 		  			{
-		  				out.print("OTP został wysyłany na Twój podany e-mail");
+		  				out.print("OTP jest wysyłane na Twój identyfikator e-mail"+request.getAttribute("message")+"</p>");
 		  			}
 		  
 		  %>
