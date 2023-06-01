@@ -35,8 +35,9 @@
 		<br> <input placeholder="Imię:" type="text" name="Aimie" required class="input_text"  autocomplete="off"><br>
 		<br> <input placeholder="Nazwisko:" type="text" name="Anazwisko" required class="input_text" autocomplete="off"><br>
 		<br> <input placeholder="E-mail:" type="email"  name="Aemail" required class="input_text"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" autocomplete="off"><br>
-		<br> <input placeholder="Twoje hasło:" type="password" name="Ahaslo1" required class="input_text" autocomplete="off"><br>
-		
+		<br> <input placeholder="Twoje hasło: " type="password" name="Ahaslo1" required class="input_text" minlength="8" pattern="^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" autocomplete="off"  title="Hasło musi mieć minimum 8 znaków, zawierać wielką literę oraz znak specjalny."><br>
+			 
+        
        </div> 
        
         <div class="button_group" id="login_button">
