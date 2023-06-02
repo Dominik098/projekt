@@ -124,7 +124,7 @@
       document.body.removeChild(promptContainer);
 
       // Sprawdzenie, czy wprowadzone hasło jest poprawne
-      if (password === "admin") {
+      if (password === "zaq1@WSX") {
         window.location.href = "Dodaj_ksiazke.jsp";
       } else {
         alert("Nieprawidłowe hasło!");
