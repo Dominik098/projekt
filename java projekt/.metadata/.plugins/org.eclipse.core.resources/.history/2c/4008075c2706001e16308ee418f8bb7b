@@ -1,0 +1,43 @@
+package com.uniquedevelopr.registration;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class Logout
+ */
+@WebServlet("/logout")
+public class Logout extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+       
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String confirmLogout = request.getParameter("confirm");
+
+        if (confirmLogout != null && confirmLogout.equals("true")) {
+            HttpSession session = request.getSession();
+            session.invalidate();
+            response.sendRedirect("G_login.jsp");
+        } else {
+            // Wyświetl okno dialogowe z potwierdzeniem wylogowania
+            response.setContentType("text/html");
+            response.getWriter().println("<html><body>");
+            response.getWriter().println("<h2>Czy na pewno chcesz się wylogować?</h2>");
+            response.getWriter().println("<button onclick='confirmLogout()'>Tak</button>");
+            response.getWriter().println("<button onclick='cancelLogout()'>Anuluj</button>");
+            response.getWriter().println("<script>");
+            response.getWriter().println("function confirmLogout() {");
+            response.getWriter().println("   window.location.href = '/logout?confirm=true';");
+            response.getWriter().println("}");
+            response.getWriter().println("function cancelLogout() {");
+            response.getWriter().println("   // Tutaj możesz umieścić dowolny kod, jeśli chcesz wykonać jakąś akcję po anulowaniu wylogowania");
+            response.getWriter().println("}");
+            response.getWriter().println("</script>");
+            response.getWriter().println("</body></html>");
+        }
+    }
+}

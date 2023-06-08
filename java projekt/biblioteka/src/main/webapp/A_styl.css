@@ -36,10 +36,6 @@ ul {
     text-align: center;
 }
 
-.znacznik:hover {
-    background-color: white;
-
-}
 
 main {
     padding: 3px;
@@ -186,7 +182,7 @@ footer {
   background-color:  aqua;
   border: none;
   border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

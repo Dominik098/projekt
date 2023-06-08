@@ -23,17 +23,17 @@
     <header>
         <nav>
              <ul>
-                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
-                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
-                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
-                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>
+               <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="pobierz" >Strona główna</button></a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="pobierz" >O bibliotece</button></a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="pobierz">Kategorie książek</button></a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="pobierz" >Słownik pojęć bibliotecznych</button></a></li>
+                <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
-                <li  ><a href= "logout"><button class="pobierz" >Wyloguj się</button></a></li>
+                <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
                 
             </ul>
 
@@ -68,7 +68,7 @@
 
     <img src="https://cdn.pixabay.com/photo/2017/08/07/19/07/books-2606859__340.jpg" alt="zdjęcie " width="600"
         height="510" style="float: right;">
-    <p>Nasza biblioteka publiczna została założona w 1950 roku przez grupę pasjonatów z różnych dziedzin.
+    <p>Nasza biblioteka publiczna została założona przez grupę pasjonatów z różnych dziedzin.
      Początkowo mieściła się w niewielkim pomieszczeniu,
      lecz szybko zaczęła rozwijać się i zyskiwać na popularności wśród mieszkańców miasta.</p>
 
@@ -117,10 +117,22 @@ Konkurs literacki dla dzieci i młodzieży z okazji Międzynarodowego Dnia Ksią
  Wszystkie z nich mają na celu zaoferowanie czytelnikom i mieszkańcom naszej społeczności różnorodnych możliwości
   edukacyjnych, artystycznych i kulturalnych.</p>
         <footer>
-            <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
+            <p>(c) 2023 Biblioteka Publiczna. Wszelkie prawa zastrzeżone.</p>
             <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
     
         </footer>
 </body>
+
+
+<script type="text/javascript">
+
+
+function confirmLogout() {
+	if (confirm("Czy na pewno chcesz się wylogować?")) {
+		window.location.href = "logout";
+	}
+}
+
+</script>
 
 </html>

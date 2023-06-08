@@ -65,8 +65,8 @@
 								<!-- Password Input -->
 								<div class="form-group row justify-content-center px-3">
 									<div class="col-9 px-0">
-										<input type="password" name="confPassword"
-											placeholder="&#xf084; &nbsp; Powtórz hasło"
+										<input type="password" name="confPassword" minlength="8" pattern="^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+											placeholder="&#xf084; &nbsp; Powtórz hasło" title="Hasło musi mieć minimum 8 znaków, zawierać wielką literę oraz znak specjalny."
 											class="form-control border-info placeicon">
 									</div>
 								</div>

@@ -30,17 +30,17 @@
     <header>
         <nav>
             <ul>
-                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
-                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
-                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
-                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>
+                <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="wyloguj" >Strona główna</button></a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="wyloguj" >O bibliotece</button></a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="wyloguj" >Kategorie książek</button></a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="wyloguj" >Słownik pojęć bibliotecznych</button></a></li>
+                <li class="znacznik"><a href="F_personel.jsp"><button class="wyloguj" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
-                <li  ><a href= "logout"><button class="wyloguj" >Wyloguj się</button></a></li>
+                <li  ><a href="#" onclick="confirmLogout()"><button class="wyloguj" >Wyloguj się</button></a></li>
                
                 
             </ul>
@@ -206,7 +206,14 @@
 
 
 
-<script>
+
+<script type="text/javascript">
+
+function confirmLogout() {
+	if (confirm("Czy na pewno chcesz się wylogować?")) {
+		window.location.href = "logout";
+	}
+}
     // Funkcja pobierająca plik PDF
     function pobierzPDF(link) {
         window.location.href = link;
@@ -216,7 +223,7 @@
     
 
     <footer>
-        <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
+        <p>(c) 2023 Biblioteka Publiczna. Wszelkie prawa zastrzeżone.</p>
         <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
 
     </footer>

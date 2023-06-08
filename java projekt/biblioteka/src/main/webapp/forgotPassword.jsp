@@ -75,7 +75,7 @@ body {
 					</div>
 					<div class="card-footer">
 						<button class="btn btn-success" type="submit"> Zresetuj hasło </button>
-						<button class="btn btn-danger" type="submit" onclick="window.location.href='G_login.jsp';">Powrót do logowania</button>
+						<button class="btn btn-danger" type="submit" onclick="window.location.href='G_login.jsp'; return false;">Powrót do logowania</button>
 					</div>
 				</form>
 			</div>

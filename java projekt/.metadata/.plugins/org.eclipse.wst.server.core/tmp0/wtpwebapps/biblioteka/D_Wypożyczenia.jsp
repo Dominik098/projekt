@@ -69,7 +69,7 @@
 </ul>
 
 <footer>
-    <p>(c) 2023 Biblioteka Naukowa. Wszelkie prawa zastrzeżone.</p>
+    <p>(c) 2023 Biblioteka  Publiczna. Wszelkie prawa zastrzeżone.</p>
     <p> Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
 
 </footer>

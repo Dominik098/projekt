@@ -47,7 +47,7 @@
         </form>
         <div class="fotter">
        
-          Masz już konto to:<a href="G_login.jsp">Zaloguj się</a>
+          Masz już konto to:<a href="G_login.jsp"><button class="klik" >Zaloguj się</button></a>
         </div>
         
      </div>
