@@ -31,7 +31,7 @@
                 <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
-                
+                <li> <a > <%=session.getAttribute("administrator") %></a><li>
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
                 <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
                 

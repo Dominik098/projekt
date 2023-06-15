@@ -23,17 +23,18 @@
     <header>
         <nav>
              <ul>
-                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
-                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
-                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
-                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
-                <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>
+                <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="pobierz" >Strona główna</button></a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="pobierz" >O bibliotece</button></a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="pobierz">Kategorie książek</button></a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="pobierz" >Słownik pojęć bibliotecznych</button></a></li>
+                <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
-                <li  ><a href= "logout"><button class="pobierz" >Wyloguj się</button></a></li>
+                
+                <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
                 
             </ul>
 
@@ -94,6 +95,12 @@
      
 	<script type="text/javascript">
 	
+	function confirmLogout() {
+		if (confirm("Czy na pewno chcesz się wylogować?")) {
+			window.location.href = "logout";
+		}
+	}
+		
 	$('.kontakt').submit(function() {
 	
 	alert("Dziękujemy za przesłanie swojej wiadomości. Skontaktujemy się z Tobą wkrótce.");
