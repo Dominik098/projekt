@@ -34,14 +34,15 @@
             <ul>
                <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="pobierz" >Strona główna</button></a></li>
                 <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="pobierz" >O bibliotece</button></a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="pobierz"><Kategorie książek</button> </a></li>
+                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="pobierz">Kategorie książek</button></a></li>
                 <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
                 <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="pobierz" >Słownik pojęć bibliotecznych</button></a></li>
                 <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
-                
+                 <li> <a > <%=session.getAttribute("administrator") %></a><li>
                 <li ><a > <%=session.getAttribute("email-login") %> </a></li>
+              
                 <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
                 
             </ul>
@@ -54,7 +55,7 @@
 
     <tr>
         <!-- tÅo strony gÅÃ³wnej-->
-        <td><img src="https://cdn.pixabay.com/photo/2015/10/10/13/03/prague-980732__340.jpg" style="width:100%;"></td>
+        <td><img src="tło_log_rej.jpg" style="width:100%;"></td>
     </tr>
 
     <!-- tÅo strony gÅÃ³wnej-->

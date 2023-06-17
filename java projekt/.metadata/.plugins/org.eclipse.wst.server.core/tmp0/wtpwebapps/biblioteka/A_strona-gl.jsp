@@ -55,7 +55,7 @@
 
     <tr>
         <!-- tÅo strony gÅÃ³wnej-->
-        <td><img src="https://cdn.pixabay.com/photo/2015/10/10/13/03/prague-980732__340.jpg" style="width:100%;"></td>
+        <td><img src="tło_log_rej.jpg" style="width:100%;"></td>
     </tr>
 
     <!-- tÅo strony gÅÃ³wnej-->
@@ -253,7 +253,7 @@
                
            <div class="image-container"  >
             <h4>Kult</h4>
-			<img src="https://ecsmedia.pl/c/kult-w-iext126948815.jpg" alt="książka" >
+			<img src="https://s.lubimyczytac.pl/upload/books/5059000/5059617/1054418-352x500.jpg" alt="książka" >
 			<div class="image-description">
 				Fabuła „Kultu” opowiada o porwaniu pięcioletniego Ossiana w sztokholmskiej dzielnicy Sodermalm.
 				Lackberg i Fexeus udowadniają ponownie, że są fantastycznym duetem. 
