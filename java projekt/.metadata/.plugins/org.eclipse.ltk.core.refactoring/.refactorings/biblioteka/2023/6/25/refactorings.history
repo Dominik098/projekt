@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;biblioteka/src/main/webapp/C_Kategorie książek.jsp&apos; to &apos;C_Kategorie-książek.jsp&apos;" description="Rename resource &apos;C_Kategorie książek.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/C_Kategorie książek.jsp" name="C_Kategorie-książek.jsp" stamp="1687165354374" updateReferences="true"/>
+</session>

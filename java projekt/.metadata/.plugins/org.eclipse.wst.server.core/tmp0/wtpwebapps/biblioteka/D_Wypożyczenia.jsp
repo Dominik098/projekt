@@ -23,7 +23,7 @@
            <ul>
                 <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
                 <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp">Kategorie książek </a></li>
+                <li  class="znacznik"><a href="C_Kategorie-książek.jsp">Kategorie książek </a></li>
                 <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
                 <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
                 <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>

@@ -9,6 +9,7 @@
 
     <link rel="icon" type="image/png" href="3.png" sizes="96x96" />
     <link rel="stylesheet" href="E_styl_slownik.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- do ikony użytkownika -->
 
     <title>Słownik Pojęć</title>
 </head>
@@ -25,14 +26,14 @@
              <ul>
                 <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="pobierz" >Strona główna</button></a></li>
                 <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="pobierz" >O bibliotece</button></a></li>
-                <li  class="znacznik"><a href="C_Kategorie książek.jsp"><button class="pobierz" >Kategorie książek</button> </a></li>
+                <li  class="znacznik"><a href="C_Kategorie-książek.jsp"><button class="pobierz" >Kategorie książek</button> </a></li>
                 <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
                 <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="pobierz" >Słownik pojęć bibliotecznych</button></a></li>
                 <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz" >Personel</button></a></li>
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 <li> <a > <%=session.getAttribute("administrator") %></a><li>
-                <a  > <%=session.getAttribute("email-login") %> </a>
+                <i class="fa fa-user"></i><a  > <%=session.getAttribute("email-login") %> </a>
                 <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
                 
             </ul>

@@ -62,9 +62,17 @@ public class login extends HttpServlet {
 			{
 				session.setAttribute("email-login", rs.getString("email"));
 				dispatcher = request.getRequestDispatcher("A_strona-gl.jsp");
+				
 				String administrator = rs.getString("admin");                
 				session.setAttribute("administrator",administrator);
 				
+				
+				String aimie = rs.getString("imie");                
+				session.setAttribute("aimie",aimie);
+				String anazwisko = rs.getString("nazwisko");                
+				session.setAttribute("anazwisko",anazwisko);
+				
+			
 				
 			}else {
 				request.setAttribute("status", "failed");

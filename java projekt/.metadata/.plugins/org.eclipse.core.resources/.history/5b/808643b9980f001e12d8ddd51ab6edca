@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Informacje o użytkowniku</title>
+  <link rel="stylesheet" type="text/css" href="info_uz.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Twoje dane </h1>
+    <div class="user-info">
+      <div class="user-details">
+      <h1>Rola: <%=session.getAttribute("administrator") %></h1>
+        <h2>Imię: <%=session.getAttribute("Aimie") %></h2>
+        <h2>Nazwisko: <%=session.getAttribute("Anazwisko") %></h2>
+        
+        <p>Email: <%=session.getAttribute("email-login") %></p>
+        <p>Hasło: <%=session.getAttribute("Ahaslo1") %></p>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
