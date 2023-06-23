@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <img src="logo.jpg" alt="ksiazka" align="left" weight="90px" height="50px">
+    <img src="logo.png" alt="ksiazka" align="left" weight="90px" height="50px">
     <h1>
         <center><u> Biblioteka Publiczna </u></center>
     </h1>

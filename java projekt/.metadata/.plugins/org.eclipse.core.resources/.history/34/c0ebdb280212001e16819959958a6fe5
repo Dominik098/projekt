@@ -1,0 +1,45 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Informacje o użytkowniku</title>
+  <link rel="stylesheet" type="text/css" href="info_uz.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li class="znacznik"><a href="A_strona-gl.jsp"><button class="pobierz">Strona główna</button></a></li>
+        <li class="znacznik"><a href="B_O bibiotece.jsp"><button class="pobierz">O bibliotece</button></a></li>
+        <li class="znacznik"><a href="C_Kategorie-książek.jsp"><button class="pobierz">Kategorie książek</button></a></li>
+        <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
+        <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="pobierz">Słownik pojęć bibliotecznych</button></a></li>
+        <li class="znacznik"><a href="F_personel.jsp"><button class="pobierz">Personel</button></a></li>
+        <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
+        <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+       
+        <li><a href="#" onclick="confirmLogout()"><button class="pobierz">Wyloguj się</button></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <div class="container">
+    <h1>Twoje Dane</h1>
+    <div class="user-info">
+      <div class="user-details">
+        <h2>Imie: <%=session.getAttribute("aimie") %></h2>
+        <h2>Nazwisko: <%=session.getAttribute("anazwisko") %></h2>
+        <p>Rola: <%=session.getAttribute("administrator") %></p>
+        <p>Email: <%=session.getAttribute("email-login") %></p>
+        <a href="forgotPassword.jsp"><button class="pobierz">Zmień hasło</button></a>
+       
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>

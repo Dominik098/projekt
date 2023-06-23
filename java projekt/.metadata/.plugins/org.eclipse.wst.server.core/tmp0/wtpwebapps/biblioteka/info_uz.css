@@ -81,4 +81,20 @@ h2 {
 p {
   margin-bottom: 5px;
 }
+.klik {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+ color:black;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
 
+.klik:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}

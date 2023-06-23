@@ -23,7 +23,7 @@
 
 <body>
     <tr>
-        <td align="center"><img src="logo.jpg" name="ksiazka" align="left" weight="90px" height="50px"></td>
+        <td align="center"><img src="logo.png" name="ksiazka" align="left" weight="90px" height="50px"></td>
     </tr>
     <h1>
         <center><u>Kategorie książek</u></center>
@@ -171,13 +171,6 @@ if(userRole != null && userRole.equals("admin")){
     }
     
 </script>
-
-
-
-
-
-
-
 
 
 

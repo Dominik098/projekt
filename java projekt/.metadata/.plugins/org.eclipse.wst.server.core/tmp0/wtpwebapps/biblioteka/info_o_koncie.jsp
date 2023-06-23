@@ -35,6 +35,7 @@
         <h2>Nazwisko: <%=session.getAttribute("anazwisko") %></h2>
         <p>Rola: <%=session.getAttribute("administrator") %></p>
         <p>Email: <%=session.getAttribute("email-login") %></p>
+        <a href="forgotPassword.jsp"><button class="klik">Jeśli chcesz zmienić hasło to kliknij tu</button></a>
        
         
       </div>
