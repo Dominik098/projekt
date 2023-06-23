@@ -40,7 +40,8 @@
                <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
                 <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
                 <li> <a > <%=session.getAttribute("administrator") %></a><li>
-                <li ><i class="fa fa-user"></i><a > <%=session.getAttribute("email-login") %> </a></li>
+                <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
+                 
                 <li  ><a href="#" onclick="confirmLogout()"><button class="wyloguj" >Wyloguj się</button></a></li>
                
                 

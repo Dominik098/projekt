@@ -72,6 +72,8 @@ public class login extends HttpServlet {
 				String anazwisko = rs.getString("nazwisko");                
 				session.setAttribute("anazwisko",anazwisko);
 				
+				
+				
 			
 				
 			}else {

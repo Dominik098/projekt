@@ -46,7 +46,7 @@
                  <li> <a > <%=session.getAttribute("administrator") %></a><li>
        
                  
-                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i> <%=session.getAttribute("email-login") %></a></li>
+                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
                  
                  
         
