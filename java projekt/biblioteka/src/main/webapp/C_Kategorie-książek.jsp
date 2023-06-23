@@ -81,8 +81,12 @@ if(userRole != null && userRole.equals("admin")){
         <th>Wydawnictwo</th>
         <th>Data_publikacj</th>
         <th>Książki w formacie PDF</th>
-       
-     
+        <%
+String userRole3 =(String) session.getAttribute("administrator");
+if(userRole != null && userRole.equals("admin")){
+	%>
+        <th><center>Opcje</center></th>
+        <% }%>
     </tr>
     <% 
         try {
@@ -92,37 +96,60 @@ if(userRole != null && userRole.equals("admin")){
             String password = "P@ssw0rd";
             Connection conn = DriverManager.getConnection(url, user, password);
 
-            // Zapytanie SQL
+            // Zapytanie SQL - Pobranie listy książek
             String sql = "SELECT * FROM Książki";
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             // Wyświetlenie wyników zapytania
-            int i=0;
-            while (rs.next()) { i++;
+            int i = 0;
+            while (rs.next()) {
+                i++;
                 String tytuł = rs.getString("tytuł");
                 String autor = rs.getString("autor");
                 String wydawnictwo = rs.getString("wydawnictwo");
                 String data_publikacji = rs.getString("data_publikacji");
                 String pdf_link = rs.getString("pdf");
-              
-                
-                
-    %>
-        <tr>
-            <td><%= i %></td>
-            <td><%= tytuł %></td>
-            <td><%= autor %></td>
-            <td><%= wydawnictwo %></td>
-            <td><%= data_publikacji %></td>
-            <td>
-    <a href="<%= request.getContextPath() + pdf_link %>" target="_blank" download><button class="pobierz">Pobierz książkę </button></a>
-</td>
-        
 
-        </tr>
-    <% 
+                %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= tytuł %></td>
+                    <td><%= autor %></td>
+                    <td><%= wydawnictwo %></td>
+                    <td><%= data_publikacji %></td>
+                    <td>
+                        <a href="<%= request.getContextPath() + pdf_link %>" target="_blank" download>
+                            <button class="pobierz">Pobierz książkę</button>
+                        </a>
+                    </td>
+                    <%
+String userRole2 =(String) session.getAttribute("administrator");
+if(userRole != null && userRole.equals("admin")){
+	%>
+                    <td>
+                        <button onclick="deleteBook('<%= i %>')" class="pobierz">Usuń książkę</button>
+                    </td>
+                    <% }%>
+                </tr>
+                <%
             }
+            
+            // Usunięcie książki z bazy danych po kliknięciu przycisku
+           if (request.getParameter("deleteID") != null) {
+    int deleteID = Integer.parseInt(request.getParameter("deleteID"));
+    String deleteSql = "DELETE FROM Książki WHERE numer_ID = ?";
+    PreparedStatement deletePs = conn.prepareStatement(deleteSql);
+    deletePs.setInt(1, deleteID);
+    deletePs.executeUpdate();
+    deletePs.close();
+    RequestDispatcher dispatcher = null;
+    
+    // Przekierowanie na stronę po usunięciu książki
+    dispatcher = request.getRequestDispatcher("C_Kategorie-książek.jsp");
+}
+
+
             // Zamykanie połączenia z bazą danych
             rs.close();
             ps.close();
@@ -132,6 +159,22 @@ if(userRole != null && userRole.equals("admin")){
         }
     %>
 </table>
+
+
+<script type="text/javascript">
+    function deleteBook(id) {
+        if (confirm("Czy na pewno chcesz usunąć książkę?")) {
+            window.location.href = "C_Kategorie-książek.jsp?deleteID=" + encodeURIComponent(id);
+            location.reload(); // Odświeża stronę
+        }
+        location.reload();// Odświeża stronę
+    }
+    
+</script>
+
+
+
+
 
 
 
