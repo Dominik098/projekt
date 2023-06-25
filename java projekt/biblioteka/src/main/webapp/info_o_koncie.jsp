@@ -19,7 +19,7 @@
         <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
         <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
        
-        <li><a href="#" onclick="confirmLogout()"><button class="pobierz">Wyloguj się</button></a></li>
+        <li  ><a href="#" onclick="confirmLogout()"><button class="pobierz" >Wyloguj się</button></a></li>
       </ul>
     </nav>
   </header>
@@ -41,5 +41,18 @@
       </div>
     </div>
   </div>
+  
+  <script>
+        
+        
+    	
+    	function confirmLogout() {
+    		if (confirm("Czy na pewno chcesz się wylogować?")) {
+    			window.location.href = "logout";
+    		}
+    	}
+  
+    	</script>
+        
 </body>
 </html>

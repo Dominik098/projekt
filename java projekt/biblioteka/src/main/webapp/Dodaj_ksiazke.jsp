@@ -73,10 +73,10 @@ button[type="submit"]:hover {
     </style>
 </head>
 <body>
+
     <h1>Dodaj książkę</h1>
     <form method="post" action="DodajKsiazkeServlet">
-        <label for="numerId">Numer ID:</label>
-        <input type="text" id="numerId" name="numerId" required><br>
+        
         <label for="tytul">Tytuł:</label>
         <input type="text" id="tytul" name="tytul" required><br>
         <label for="autor">Autor:</label>
@@ -89,6 +89,9 @@ button[type="submit"]:hover {
         <input type="text" id="pdf" name="pdf" required><br>
         <button type="submit">Dodaj</button>
     </form>
+     
+   
+   
      
 </body>
 </html>

@@ -50,6 +50,8 @@
         </nav>
 
     </header>
+    
+  
 	    <h1>Książki </h1>
 	    
 
@@ -128,7 +130,7 @@ String userRole2 =(String) session.getAttribute("administrator");
 if(userRole != null && userRole.equals("admin")){
 	%>
                     <td>
-                        <button onclick="deleteBook('<%= i %>')" class="pobierz">Usuń książkę</button>
+                        <button onclick="deleteBook('<%= rs.getInt("numer_ID") %>')" class="pobierz">Usuń książkę</button>
                     </td>
                     <% }%>
                 </tr>
@@ -161,14 +163,18 @@ if(userRole != null && userRole.equals("admin")){
 </table>
 
 
+ 
+    
 <script type="text/javascript">
     function deleteBook(id) {
         if (confirm("Czy na pewno chcesz usunąć książkę?")) {
             window.location.href = "C_Kategorie-książek.jsp?deleteID=" + encodeURIComponent(id);
+            alert("Książka została pomyślnie usunięta.");
             location.reload(); // Odświeża stronę
         }
         location.reload();// Odświeża stronę
     }
+  
     
 </script>
 

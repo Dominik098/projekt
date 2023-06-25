@@ -1,10 +1,10 @@
-
-
 package com.uniquedevelopr.registration;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +24,6 @@ public class DodajKsiazkeServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         
-        int numerId = Integer.parseInt(request.getParameter("numerId"));
         String tytul = request.getParameter("tytul");
         String autor = request.getParameter("autor");
         String wydawnictwo = request.getParameter("wydawnictwo");
@@ -33,19 +32,35 @@ public class DodajKsiazkeServlet extends HttpServlet {
         
         try {
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            String sql = "INSERT INTO Książki (numer_ID, tytuł, autor, wydawnictwo, data_publikacji, pdf) VALUES (?, ?, ?, ?, ?, ?)";
+            
+            // Sprawdź istnienie książki przed dodaniem
+            String checkQuery = "SELECT COUNT(*) FROM Książki WHERE tytuł = ? OR pdf = ?";
+            PreparedStatement checkStatement = connection.prepareStatement(checkQuery);
+            checkStatement.setString(1, tytul);
+            checkStatement.setString(2, pdf);
+            ResultSet resultSet = checkStatement.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            if (count > 0) {
+                response.getWriter().println("Książka o podanym tytule lub linku PDF już istnieje.");
+                return; // Zatrzymaj proces dodawania książki
+            }
+            
+            // Dodaj książkę do bazy danych
+            String sql = "INSERT INTO Książki (tytuł, autor, wydawnictwo, data_publikacji, pdf) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, numerId);
-            statement.setString(2, tytul);
-            statement.setString(3, autor);
-            statement.setString(4, wydawnictwo);
-            statement.setString(5, dataPublikacji);
-            statement.setString(6, pdf);
+            statement.setString(1, tytul);
+            statement.setString(2, autor);
+            statement.setString(3, wydawnictwo);
+            statement.setString(4, dataPublikacji);
+            statement.setString(5, pdf);
             
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
-                
-                response.sendRedirect("A_strona-gl.jsp");
+            	 String alertScript = "<script>alert('Książka została dodana pomyślnie.'); window.location='C_Kategorie-książek.jsp';</script>";
+            	    response.setContentType("text/html; charset=UTF-8");
+            	    response.setCharacterEncoding("UTF-8");
+            	    response.getWriter().println(alertScript);
             } else {
                 response.getWriter().println("Błąd podczas dodawania książki do bazy danych.");
             }
