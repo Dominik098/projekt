@@ -42,6 +42,30 @@
     </div>
   </div>
   
+  <%
+// Sprawdź, czy użytkownik jest zalogowany
+String userEmail = (String) session.getAttribute("email-login");
+if (userEmail != null) {
+  // Pobierz listę przeczytanych książek z sesji
+  List<String> readBooks = (List<String>) session.getAttribute("readBooks");
+  if (readBooks != null && !readBooks.isEmpty()) {
+    // Wyświetl listę przeczytanych książek
+    out.println("<h3>Twoje przeczytane książki:</h3>");
+    out.println("<ul>");
+    for (String bookId : readBooks) {
+      // Tutaj możesz wykonać zapytanie do bazy danych lub innych operacji na podstawie ID książki
+      // i wyświetlić szczegóły książki, np. tytuł
+      String bookTitle = getBookTitleFromDatabase(bookId); // Pobierz tytuł książki na podstawie ID
+      out.println("<li>" + bookTitle + "</li>");
+    }
+    out.println("</ul>");
+  } else {
+    out.println("<p>Brak przeczytanych książek.</p>");
+  }
+} else {
+   out.println("<p>Nie jesteś zalogowany. Zaloguj się, aby zobaczyć listę przeczytanych książek.</p>");
+}
+%>
   
   
   <script>

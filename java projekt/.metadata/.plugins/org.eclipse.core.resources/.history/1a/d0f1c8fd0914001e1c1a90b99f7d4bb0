@@ -1,0 +1,165 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+<%@ page import="java.sql.*" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- pozostałe elementy nagłówka -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+        .ulubione {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- pozostała część kodu -->
+    
+    <h3>Oto lista wszystkich książek dostępnych do wypożyczenia w bibliotece</h3>
+    
+    <table>
+        <!-- nagłówki kolumn -->
+        <tr>
+            <th>Lp.</th>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Wydawnictwo</th>
+            <th>Data_publikacji</th>
+            <th>Książki w formacie PDF</th>
+            <% if (session.getAttribute("administrator") != null && session.getAttribute("administrator").equals("admin")) { %>
+                <th><center>Opcje</center></th>
+            <% } %>
+        </tr>
+        <%
+        try {
+            // Połączenie z bazą danych
+            String url = "jdbc:mysql://localhost:3306/Biblioteka";
+            String user = "root";
+            String password = "P@ssw0rd";
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            // Zapytanie SQL - Pobranie listy książek
+            String sql = "SELECT * FROM Książki";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            // Wyświetlenie wyników zapytania
+            int i = 0;
+            while (rs.next()) {
+                i++;
+                int numerID = rs.getInt("numer_ID");
+                String tytuł = rs.getString("tytuł");
+                String autor = rs.getString("autor");
+                String wydawnictwo = rs.getString("wydawnictwo");
+                String data_publikacji = rs.getString("data_publikacji");
+                String pdf_link = rs.getString("pdf");
+
+                // Sprawdzenie czy książka jest oznaczona jako ulubiona
+                boolean isUlubione = false;
+                if (session.getAttribute("ulubioneKsiazki") != null) {
+                    String ulubioneKsiazki = (String) session.getAttribute("ulubioneKsiazki");
+                    String[] ulubioneArr = ulubioneKsiazki.split(",");
+                    for (String id : ulubioneArr) {
+                        if (id.equals(String.valueOf(numerID))) {
+                            isUlubione = true;
+                            break;
+                        }
+                    }
+                }
+                %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= tytuł %></td>
+                    <td><%= autor %></td>
+                    <td><%= wydawnictwo %></td>
+                    <td><%= data_publikacji %></td>
+                    <td>
+                        <a href="<%= request.getContextPath() + pdf_link %>" target="_blank" download>
+                            <button class="pobierz">Pobierz książkę</button>
+                        </a>
+                    </td>
+                    <% if (session.getAttribute("administrator") != null && session.getAttribute("administrator").equals("admin")) { %>
+                        <td>
+                            <button onclick="deleteBook('<%= numerID %>')" class="pobierz">Usuń książkę</button>
+                        </td>
+                    <% } %>
+                    <td>
+                        <button class="ulubione-toggle <% if (isUlubione) { %>ulubione<% } %>"
+                                onclick="toggleUlubione(<%= numerID %>)">
+                            <% if (isUlubione) { %>Usuń z ulubionych<% } else { %>Dodaj do ulubionych<% } %>
+                        </button>
+                    </td>
+                </tr>
+                <%
+            }
+            
+            // Usunięcie książki z bazy danych po kliknięciu przycisku
+            if (request.getParameter("deleteID") != null) {
+                int deleteID = Integer.parseInt(request.getParameter("deleteID"));
+                String deleteSql = "DELETE FROM Książki WHERE numer_ID = ?";
+                PreparedStatement deletePs = conn.prepareStatement(deleteSql);
+                deletePs.setInt(1, deleteID);
+                deletePs.executeUpdate();
+                deletePs.close();
+                RequestDispatcher dispatcher = null;
+                
+                // Przekierowanie na stronę po usunięciu książki
+                dispatcher = request.getRequestDispatcher("C_Kategorie-książek.jsp");
+            }
+
+            // Zamykanie połączenia z bazą danych
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        %>
+    </table>
+    
+    <script type="text/javascript">
+        function deleteBook(id) {
+            if (confirm("Czy na pewno chcesz usunąć książkę?")) {
+                window.location.href = "C_Kategorie-książek.jsp?deleteID=" + encodeURIComponent(id);
+                alert("Książka została pomyślnie usunięta.");
+                location.reload(); // Odświeża stronę
+            }
+            location.reload(); // Odświeża stronę
+        }
+        
+        function toggleUlubione(id) {
+            $.ajax({
+                type: "POST",
+                url: "ToggleUlubioneServlet",
+                data: {id: id},
+                success: function(response) {
+                    if (response === "added") {
+                        $(".ulubione-toggle[data-id='" + id + "']").addClass("ulubione");
+                        $(".ulubione-toggle[data-id='" + id + "']").text("Usuń z ulubionych");
+                    } else if (response === "removed") {
+                        $(".ulubione-toggle[data-id='" + id + "']").removeClass("ulubione");
+                        $(".ulubione-toggle[data-id='" + id + "']").text("Dodaj do ulubionych");
+                    }
+                }
+            });
+        }
+    </script>
+    
+
+
+    <footer>
+        <p>(c) 2023 Biblioteka Publiczna. Wszelkie prawa zastrzeżone.</p>
+        <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+
+    </footer>
+
+
+
+</body>
+
+</html>
