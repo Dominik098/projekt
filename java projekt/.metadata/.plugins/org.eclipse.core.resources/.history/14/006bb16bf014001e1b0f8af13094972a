@@ -43,7 +43,11 @@ public class login extends HttpServlet {
 		} catch (NoSuchAlgorithmException e) {
 		    e.printStackTrace();
 		}
-	
+		
+		
+		
+		
+		
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");

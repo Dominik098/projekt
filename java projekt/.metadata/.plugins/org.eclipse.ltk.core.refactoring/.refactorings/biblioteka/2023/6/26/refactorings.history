@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;biblioteka/src/main/webapp/NewFile.jsp&apos; to &apos;forgotPassword2.jsp&apos;" description="Rename resource &apos;NewFile.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/NewFile.jsp" name="forgotPassword2.jsp" stamp="1687878273466" updateReferences="true"/>
+</session>
