@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <img src="logo.jpg" alt="ksiazka" align="left" weight="90px" height="50px">
+    <img src="logo.png" alt="ksiazka" align="left" weight="90px" height="50px">
     <h1>
         <center><u> Biblioteka Publiczna </u></center>
     </h1>
@@ -46,7 +46,7 @@
                  <li> <a > <%=session.getAttribute("administrator") %></a><li>
        
                  
-                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i> <%=session.getAttribute("email-login") %></a></li>
+                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
                  
                  
         
@@ -287,18 +287,27 @@
             </div>
                
         
+        
+        
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
+
+
         <script>
-        
-        
-    	
-    	function confirmLogout() {
-    		if (confirm("Czy na pewno chcesz się wylogować?")) {
-    			window.location.href = "logout";
-    		}
-    	}
-        
-        
-        
         
 		const imageContainers = document.querySelectorAll('.image-container');
 

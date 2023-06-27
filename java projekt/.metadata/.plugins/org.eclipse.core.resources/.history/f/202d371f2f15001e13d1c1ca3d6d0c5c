@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="D_wypozyczenia.css">
+    <title>Wypożyczenia</title>
+    <link rel="icon" type="image/png" href="3.png" sizes="96x96" />
+</head>
+
+<body>
+    <tr>
+        <td align="center"><img src="logo.png" name="ksiazka" align="left" weight="90px" height="50px"></td>
+    </tr>
+    <h1>
+        <center><u>Wypożyczenia w naszej Bibliotece </u></center>
+    </h1>
+    <header>
+        <nav>
+           <ul>
+                <li class="znacznik" ><a href="A_strona-gl.jsp">Strona główna</a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp">O bibliotece</a></li>
+                <li  class="znacznik"><a href="C_Kategorie-książek.jsp">Kategorie książek </a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp">Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp">Słownik pojęć bibliotecznych</a></li>
+                <li class="znacznik"><a href="F_personel.jsp">Personel</a></li>
+               <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
+                <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+                <li> <a > <%=session.getAttribute("administrator") %></a><li>
+                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
+                <li  ><a href= "logout"><button class="pobierz" >Wyloguj się</button></a></li>
+                
+            </ul>
+        </nav>
+
+    </header>
+
+<h1 id="cytat">„Czytanie dobrych książek jest niczym rozmowa z najwspanialszymi ludźmi minionych czasów.” – Kartezjusz</h1>
+<h1>Wszytakie książki wypożyczne przez naszych użytkowników </h1>
+
+
+<p>info: <button onclick="location.href='‪C:\Users\User\Desktop\lalka.pdf'">lalka</button></p>
+<a href="‪C:\Users\User\Desktop\lalka.pdf" download>lalka</a>
+<a href="‪‪https://wolnelektury.pl/media/book/pdf/pan-tadeusz.pdf" download>pan tadeusz</a>
+<a href="‪C:\Users\User\Desktop\w-pustyni-i-w-puszczy (1).pdf" download>pustynia</a>
+
+<br>
+
+<a href="pdf/zbrodnia i kara.pdf" download>link pobierz</a>
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+    <li>x</li>
+    <li>x</li>
+    <li>x</li>
+    <li>x</li>
+</ul>
+
+<footer>
+    <p>(c) 2023 Biblioteka  Publiczna. Wszelkie prawa zastrzeżone.</p>
+    <p> Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

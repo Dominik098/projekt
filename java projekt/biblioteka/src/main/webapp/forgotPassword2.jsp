@@ -25,6 +25,7 @@ body {
 	text-transform: none
 }
 
+
 .forgot {
 	background-color: #fff;
 	padding: 12px;
