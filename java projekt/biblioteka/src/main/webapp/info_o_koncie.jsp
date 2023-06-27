@@ -44,17 +44,22 @@
   
   
   
-  <script>
-        
-        
-    	
-    	function confirmLogout() {
-    		if (confirm("Czy na pewno chcesz się wylogować?")) {
-    			window.location.href = "logout";
-    		}
-    	}
-  
-    	</script>
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
         
 </body>
 </html>

@@ -42,7 +42,7 @@
                 <li> <a > <%=session.getAttribute("administrator") %></a><li>
                 <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
                  
-                <li  ><a href="#" onclick="confirmLogout()"><button class="wyloguj" >Wyloguj się</button></a></li>
+                <li  ><a onclick="confirmLogout()"><button class="wyloguj" >Wyloguj się</button></a></li>
                
                 
             </ul>
@@ -164,7 +164,24 @@ if(userRole != null && userRole.equals("admin")){
 </table>
 
 
- 
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
+
+
     
 <script type="text/javascript">
     function deleteBook(id) {
@@ -175,26 +192,23 @@ if(userRole != null && userRole.equals("admin")){
         }
         location.reload();// Odświeża stronę
     }
-  
-    
+ 
 </script>
+
 
 
 
 <script type="text/javascript">
 
-function confirmLogout() {
-	if (confirm("Czy na pewno chcesz się wylogować?")) {
-		window.location.href = "logout";
-	}
-}
     // Funkcja pobierająca plik PDF
     function pobierzPDF(link) {
         window.location.href = link;
     }
 </script>
     
-    
+    <p id="info">Jeśli nie znalazłeś swojej książki, napisz swoją propozycję w zakładce <a href="F_personel.jsp"><button id="info_przycisk" >"Personel"</button></a> w sekcji "Kontakt".
+     Postaramy się uzupełnić brakującą książkę specjalnie dla Ciebie!</p>
+
 
     <footer>
         <p>(c) 2023 Biblioteka Publiczna. Wszelkie prawa zastrzeżone.</p>

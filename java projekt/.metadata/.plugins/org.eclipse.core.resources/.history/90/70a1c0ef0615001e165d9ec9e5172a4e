@@ -1,0 +1,236 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+
+<%@ page import="java.sql.*" %>
+
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C_kategorie.css" type="text/css">
+
+    <link rel="icon" type="image/png" href="3.png" sizes="96x96" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- do ikony użytkownika -->
+    <title>Kategorie książek </title>
+
+    
+    
+</head>
+
+<body>
+    <tr>
+        <td align="center"><img src="logo.png" name="ksiazka" align="left" weight="90px" height="50px"></td>
+    </tr>
+    <h1>
+        <center><u>Kategorie książek</u></center>
+    </h1>
+    <header>
+        <nav>
+            <ul>
+                <li class="znacznik" ><a href="A_strona-gl.jsp"><button class="wyloguj" >Strona główna</button></a></li>
+                <li class="znacznik" ><a href="B_O bibiotece.jsp"><button class="wyloguj" >O bibliotece</button></a></li>
+                <li  class="znacznik"><a href="C_Kategorie-książek.jsp"><button class="wyloguj" >Kategorie książek</button></a></li>
+                <!--   <li><a href="D_Wypożyczenia.jsp"><button class="pobierz" >Wypożyczane </a></li>-->
+                <li class="znacznik"><a href="E_Słownik pojęć.jsp"><button class="wyloguj" >Słownik pojęć bibliotecznych</button></a></li>
+                <li class="znacznik"><a href="F_personel.jsp"><button class="wyloguj" >Personel</button></a></li>
+               <!-- <li class="znacznik"><a href="G_login.jsp">Logowanie</a></li>
+                <li class="znacznik"><a href="H_rejestracja.jsp">Rejestracja</a></li>-->
+                <li> <a > <%=session.getAttribute("administrator") %></a><li>
+                <li><a href="info_o_koncie.jsp"><i class="fa fa-user"></i><button class="klik" > <%=session.getAttribute("email-login") %></button></a></li>
+                 
+                <li  ><a href="#" onclick="confirmLogout()"><button class="wyloguj" >Wyloguj się</button></a></li>
+               
+                
+            </ul>
+
+        </nav>
+
+    </header>
+    
+  
+	    <h1>Książki </h1>
+	    
+
+<%
+String userRole =(String) session.getAttribute("administrator");
+if(userRole != null && userRole.equals("admin")){
+	%>
+
+
+
+<a href="Dodaj_ksiazke.jsp">
+  <button class="dodanie" onclick="return promptForPassword()">Przejdź do formularza<br> aby dodać książkę</button>
+</a>
+<% }%>
+
+
+
+
+
+
+
+    <h3>Oto lista wszystkich książek dostępnych do wypożyczenia w bibliotece </h3>
+    
+    
+<table>
+    <tr>
+        <th>Lp.</th>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Wydawnictwo</th>
+        <th>Data_publikacj</th>
+        <th>Książki w formacie PDF</th>
+        <%
+String userRole3 =(String) session.getAttribute("administrator");
+if(userRole != null && userRole.equals("admin")){
+	%>
+        <th><center>Opcje</center></th>
+        <% }%>
+    </tr>
+    <% 
+        try {
+            // Połączenie z bazą danych
+            String url = "jdbc:mysql://localhost:3306/Biblioteka";
+            String user = "root";
+            String password = "P@ssw0rd";
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            // Zapytanie SQL - Pobranie listy książek
+            String sql = "SELECT * FROM Książki";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            // Wyświetlenie wyników zapytania
+            int i = 0;
+            while (rs.next()) {
+                i++;
+                String tytuł = rs.getString("tytuł");
+                String autor = rs.getString("autor");
+                String wydawnictwo = rs.getString("wydawnictwo");
+                String data_publikacji = rs.getString("data_publikacji");
+                String pdf_link = rs.getString("pdf");
+
+                %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= tytuł %></td>
+                    <td><%= autor %></td>
+                    <td><%= wydawnictwo %></td>
+                    <td><%= data_publikacji %></td>
+                    <td>
+                        <a href="<%= request.getContextPath() + pdf_link %>" target="_blank" download>
+                            <button class="pobierz">Pobierz książkę</button>
+                        </a>
+                    </td>
+                    <%
+String userRole2 =(String) session.getAttribute("administrator");
+if(userRole != null && userRole.equals("admin")){
+	%>
+                    <td>
+                        <button onclick="deleteBook('<%= rs.getInt("numer_ID") %>')" class="pobierz">Usuń książkę</button>
+                    </td>
+                    <% }%>
+                </tr>
+                <%
+            }
+            
+            // Usunięcie książki z bazy danych po kliknięciu przycisku
+           if (request.getParameter("deleteID") != null) {
+    int deleteID = Integer.parseInt(request.getParameter("deleteID"));
+    String deleteSql = "DELETE FROM Książki WHERE numer_ID = ?";
+    PreparedStatement deletePs = conn.prepareStatement(deleteSql);
+    deletePs.setInt(1, deleteID);
+    deletePs.executeUpdate();
+    deletePs.close();
+    RequestDispatcher dispatcher = null;
+    
+    // Przekierowanie na stronę po usunięciu książki
+    dispatcher = request.getRequestDispatcher("C_Kategorie-książek.jsp");
+}
+
+
+            // Zamykanie połączenia z bazą danych
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    %>
+</table>
+
+
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+    function deleteBook(id) {
+        swal({
+            title: "Czy na pewno chcesz usunąć książkę?",
+            icon: "warning",
+            buttons: ["Anuluj", "Usuń"],
+            dangerMode: true,
+        }).then((confirmed) => {
+            if (confirmed) {
+                window.location.href = "C_Kategorie-książek.jsp?deleteID=" + encodeURIComponent(id);
+                swal({
+                    title: "Sukces",
+                    text: "Książka została pomyślnie usunięta.",
+                    icon: "success",
+                    timer: 3000, // 3 sekundy
+                    buttons: false,
+                });
+                setTimeout(() => {
+                    location.reload(); // Odświeża stronę
+                }, 3000); // 3 sekundy
+            } else {
+                location.reload(); // Odświeża stronę
+            }
+        });
+    }
+</script>
+
+
+
+
+<script type="text/javascript">
+
+    // Funkcja pobierająca plik PDF
+    function pobierzPDF(link) {
+        window.location.href = link;
+    }
+</script>
+    
+    
+
+    <footer>
+        <p>(c) 2023 Biblioteka Publiczna. Wszelkie prawa zastrzeżone.</p>
+        <p>Telefon: +48 123 456 789  E-mail: kontakt@bibliotekamiejska.pl.</p>
+
+    </footer>
+
+
+
+</body>
+
+</html>
